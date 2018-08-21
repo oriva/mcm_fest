@@ -1,0 +1,57 @@
+@import "mixin.sass"
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
+  margin: 0
+input[type='number']
+  -moz-appearance: textfield
+html, body
+  min-height: 100%
+  overflow-x: hidden
+body
+  margin: 0
+  font-family: 'Museo Sans Cyrl 300'
+  &:active,:hover,:focus
+    outline: 0
+    outline-offset: 0
+  &::-webkit-scrollbar-track
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+    border-radius: 10px
+    background-color: #F5F5F5
+  &::-webkit-scrollbar
+    width: 8px
+    background-color: #F5F5F5
+  &::-webkit-scrollbar-thumb
+    border-radius: 0px
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
+    background-color: #000
+button
+  border: 0
+  border-radius: 0
+  cursor: pointer
+  color: #FFF
+  @include transition(0.3s ease all)
+a
+  color: #FFF
+  text-decoration: none
+ul, li, ol
+  margin: 0
+  padding: 0
+  list-style-type: none
+.text-left
+  text-align: left!important
+.text-center
+  text-align: center!important
+.text-right
+  text-align: right!important
+.w-100
+  width: 100%
+.h-100
+  height: 100%
+.font-white
+  color: #fff
+.font-red
+  color: #0ff
+.font-black
+  color: #000
