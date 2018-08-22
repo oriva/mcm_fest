@@ -5,10 +5,89 @@
     <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Oriva">
+    <meta property="og:locale" content="ru_RU">
+
+    <meta name=«title» content="Фестиваль MCM">
+    <meta name="description" content="">
+    <!--  icon  -->
+    <link rel="shortcut icon" href="/favicon.ico?">
+    <link rel="apple-touch-icon-precomposed" href="/favicon.png">
+    <!--  css   -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/css/index.css">
     <title>Фестиваль MCM</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 <body>
+    <header class="header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-3 header__logo">
+                    <img src="/img/header-logo.png" alt="Логотип">
+                </div>
+                <div class="col-9 header__h1">
+                    <h1 class="font-red"><small>Музыкальный фестиваль</small>
+                        «Музыка моего города»</h1>
+                </div>
+                <div class="col-10 header__info">
+                    <label>Станьте спонсором фестиваля<br>и о вас узнают тысячи людей</label>
+                    <i class="font-red">Информационный охват<br>более 300 000 человек</i>
+                </div>
+                <div class="col-3 offset-1 text-center">
+                    <div class="header__size-play">
+                        <div class="header__play">
+                            <img src="/img/button-play__without-bg.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8"></div>
+                <div class="col-3 text-center">
+                    <img src="/img/header-arrow.svg" alt="" class="header__arrow">
+                    <button class="header__watch">Смотрите видео</button>
+                </div>
+                <div class="col-8 offset-2">
+                    <div class="header__music">
+                        <div class="row align-items-center">
+                            <div class="col-auto">
+                                <img src="/img/button-play__without-bg_red.svg" alt="play" class="header__music_play">
+                            </div>
+                            <div class="col-auto">
+                                <label>Гимн фестиваля - NT LEX</label>
+                            </div>
+                            <p>1:25</p>
+                            <div class="col-auto">
+                                <div class="header__music_eq">
+                                    <div class="poloska"></div>
+                                    <div class="poloska"></div>
+                                    <div class="poloska"></div>
+                                    <div class="poloska"></div>
+                                    <div class="poloska"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script src="/js/jquery-1.12.4.js"></script>
+    <script>
+        var red = document.querySelector('.poloska');
 
+        const min = 0.3, max = 0.8;
+        var animationDuration = 0.6;
+
+        function setProperty(duration, size) {
+            red.style.setProperty('--animation-time', duration +'s');
+            red.style.setProperty('--animation-size', size);
+        }
+
+        setInterval(function(){
+            animationDuration = Math.random() * (max - min) + min;
+            animationSize = Math.random() * (max - min) + min;
+            setProperty(animationDuration, animationSize);
+        }, animationDuration*1000);
+    </script>
 </body>
 </html>
