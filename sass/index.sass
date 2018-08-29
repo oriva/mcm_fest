@@ -55,8 +55,8 @@ a
 h2
   text-transform: uppercase
   text-align: center
-  font-size: 38px
-  font-weight: 600
+  font-size: 36px
+  font-weight: 900
 ul, li, ol
   margin: 0
   padding: 0
@@ -326,13 +326,47 @@ ul, li, ol
       img
         margin-right: 60px
   &__red-line
+    display: block
     background-color: #F00
     height: 3px
-    width: 100%
-    &.padding-top
+    width: 75%
+    margin-left: auto
+    margin-right: auto
+    &.margin-top
       margin-top: 120px
-  &__general-p
-    
+.sponsorship
+  padding: 213px 0
+  background-color: #E9E9E9
+  border-bottom-left-radius: 40% 50px
+  border-bottom-right-radius: 70% 190px
+  border-top-left-radius: 70% 220px
+  border-top-right-radius: 50% 130px
+  position: relative
+  overflow: hidden
+  &__phara
+    font-size: 1.1em
+    text-align: center
+    padding: 13px 0 90px
+  &__grid-boy
+    display: grid
+    grid-template-columns: 7fr 1fr 1fr 1fr
+    padding-bottom: 150px
+    div
+      padding: 15px
+      display: grid
+    label
+      font-size: 1.1em
+      font-weight: bold
+      text-transform: uppercase
+    img
+      display: block
+      margin: auto
+      height: 27px
+  &__red
+    background-color: #F00
+  &__icon-write
+    width: 16px!important
+    height: auto!important
 @keyframes play-boom
   0%
     @include transform(scale(.85))
