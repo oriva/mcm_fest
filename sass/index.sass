@@ -37,9 +37,26 @@ button
   cursor: pointer
   color: #FFF
   @include transition(0.3s ease all)
+h1,h2,h3,h4,h5,p,a,i,button,span,address,li,label,small
+  font-size: 1em
+  margin: 0
+  line-height: 1.36
+  &::selection
+    background-color: #F00
+    color: #FFF
+  &::-moz-selection
+    background-color: #F00
+    color: #FFF
+h1,h2,h3,h4,h5,p,span,address,li,label,a:not([href]):not([tabindex])
+  cursor: default
 a
   color: #FFF
   text-decoration: none
+h2
+  text-transform: uppercase
+  text-align: center
+  font-size: 38px
+  font-weight: 600
 ul, li, ol
   margin: 0
   padding: 0
@@ -50,6 +67,8 @@ ul, li, ol
   text-align: center!important
 .text-right
   text-align: right!important
+.text-red
+  color: #f00
 .w-100
   width: 100%
 .h-100
@@ -61,12 +80,17 @@ ul, li, ol
 .font-black
   color: #000
 .header
-  padding: 30px 0 0
+  padding: 1vh 0 0
   background-color: #E9E9E9
   border-bottom-left-radius: 40% 50px
   border-bottom-right-radius: 70% 190px
+  position: relative
   overflow: hidden
+  height: 100vh
+  div:not(.header__butterfly):not(.header__duo)
+    z-index: 3
   &__logo
+    z-index: 3
     display: -moz-grid
     display: -ms-grid
     display: grid
@@ -76,7 +100,8 @@ ul, li, ol
     justify-content: end
     img
       position: relative
-      width: 100%
+      width: 70%
+      left: -40%
   &__h1
     h1
       font-weight: 900
@@ -125,12 +150,13 @@ ul, li, ol
         animation-delay: .7s
       .header__play
         animation: play-boom 0.7s ease-out infinite
+        background: #F00
   &__play
     position: relative
     height: 100%
     width: 100%
     border-radius: 50%
-    background: #F00
+    background: #000
     @include transition(.5s)
     img
       position: absolute
@@ -141,6 +167,9 @@ ul, li, ol
       right: 0
       bottom: 0
       height: 45%
+  &__block-watch
+    left: -110px
+    position: relative
   &__watch
     background-color: transparent
     color: #F00
@@ -156,7 +185,7 @@ ul, li, ol
     margin: 0 0 5px 40px
   &__music
     background-color: #fff
-    margin: 100px 0
+    margin: 60px 0
     padding: 13px 22px
     -webkit-border-radius: 30px
     -moz-border-radius: 30px
@@ -164,13 +193,18 @@ ul, li, ol
     -webkit-box-shadow: 2px 3px 2px rgba(0,0,0,0.25)
     -moz-box-shadow: 2px 3px 2px rgba(0,0,0,0.25)
     box-shadow: 2px 3px 2px rgba(0,0,0,0.25)
-    &_play
+    &_sound
+      display: block
       margin-left: 10px
       cursor: pointer
       height: 30px
       @include transition(.3s)
       &:hover
         @include transform(scale(1.1))
+    &_play
+      display: block
+    &_pause
+      display: none
     label
       font-size: 18px
       font-weight: 600
@@ -190,6 +224,13 @@ ul, li, ol
         background: #F00
         height: 100%
         display: inline-block
+    &.playing
+      .header__music
+        &_pause
+          display: block
+        &_play
+          display: none
+      .poloska
         &:nth-child(1)
           animation: equalizer var(--animation-time) ease-out infinite
         &:nth-child(2)
@@ -200,6 +241,98 @@ ul, li, ol
           animation: equalizer var(--animation-time) ease-out infinite
         &:nth-child(5)
           animation: equalizer var(--animation-time) ease-out infinite
+  .row
+    position: relative
+  &__butterfly, &__duo
+    position: absolute
+    left: 0
+    right: 0
+  &__butterfly
+    z-index: 0
+    bottom: -10px
+    height: 98vh
+    img
+      height: 100%
+      width: auto
+      display: block
+      margin: auto
+      padding-right: 5%
+  &__duo
+    z-index: 1
+    bottom: -10px
+    height: 72vh
+    img
+      height: 100%
+      width: auto
+      display: block
+      margin: auto
+      padding-left: 10%
+.about-marketing
+  padding: 118px 0
+  p
+    margin: 35px 0
+    text-align: center
+  &__button
+    background-color: #F00
+    display: block
+    margin: 0 auto 40px
+    padding: 10px 20px
+    text-transform: uppercase
+    -webkit-border-radius: 20px
+    -moz-border-radius: 20px
+    border-radius: 20px
+    &:hover
+      @include transform(scale(.9))
+  &__item
+    height: 200px
+    -webkit-background-size: auto 100%
+    background-size: auto 100%
+    margin-top: 100px
+    img
+      display: block
+      height: 75px
+      margin-left: auto
+    p
+      width: 100%
+      text-align: left
+      font-size: 1.1em
+      font-weight: bold
+      padding-left: 66px
+      margin: 20px 0 0
+    &.cup
+      background: url("../img/about-marketing/cup.svg") no-repeat
+      img
+        margin-right: 20%
+    &.guitar
+      background: url("../img/about-marketing/guitar.svg") no-repeat
+      p
+        padding-right: 50px
+      img
+        margin-right: 70px
+    &.dj
+      background: url("../img/about-marketing/dj.svg") no-repeat
+      p
+        padding-right: 35px
+      img
+        margin-right: 70px
+    &.star
+      background: url("../img/about-marketing/star.svg") no-repeat
+      p
+        padding-right: 35px
+      img
+        margin-right: 70px
+    &.eight
+      background: url("../img/about-marketing/eight.svg") no-repeat
+      img
+        margin-right: 60px
+  &__red-line
+    background-color: #F00
+    height: 3px
+    width: 100%
+    &.padding-top
+      margin-top: 120px
+  &__general-p
+    
 @keyframes play-boom
   0%
     @include transform(scale(.85))

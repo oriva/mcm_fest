@@ -21,16 +21,16 @@
 </head>
 <body>
     <header class="header">
-        <div class="container">
-            <div class="row align-items-center">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
                 <div class="col-3 header__logo">
                     <img src="/img/header-logo.png" alt="Логотип">
                 </div>
-                <div class="col-9 header__h1">
+                <div class="col-8 header__h1">
                     <h1 class="font-red"><small>Музыкальный фестиваль</small>
                         «Музыка моего города»</h1>
                 </div>
-                <div class="col-10 header__info">
+                <div class="col-10 header__info align-self-start">
                     <label>Станьте спонсором фестиваля<br>и о вас узнают тысячи людей</label>
                     <i class="font-red">Информационный охват<br>более 300 000 человек</i>
                 </div>
@@ -40,17 +40,20 @@
                             <img src="/img/button-play__without-bg.svg" alt="">
                         </div>
                     </div>
+                    <div class="header__block-watch">
+                        <img src="/img/header-arrow.svg" alt="" class="header__arrow">
+                        <button class="header__watch">Смотрите видео</button>
+                    </div>
                 </div>
                 <div class="col-8"></div>
                 <div class="col-3 text-center">
-                    <img src="/img/header-arrow.svg" alt="" class="header__arrow">
-                    <button class="header__watch">Смотрите видео</button>
                 </div>
-                <div class="col-8 offset-2">
+                <div class="col-8 offset-2 align-self-end">
                     <div class="header__music">
                         <div class="row align-items-center">
                             <div class="col-auto">
-                                <img src="/img/button-play__without-bg_red.svg" alt="play" class="header__music_play">
+                                <img src="/img/button-play__without-bg_red.svg" alt="play" class="header__music_play header__music_sound">
+                                <img src="/img/button-pause__without-bg.svg" alt="play" class="header__music_pause header__music_sound">
                             </div>
                             <div class="col-auto">
                                 <label>Гимн фестиваля - NT LEX</label>
@@ -68,26 +71,79 @@
                         </div>
                     </div>
                 </div>
+                <div class="header__butterfly">
+                    <img src="img/header-butterfly.png" alt="">
+                </div>
+                <div class="header__duo">
+                    <img src="img/header-duo.png" alt="">
+                </div>
             </div>
         </div>
     </header>
-    <script src="/js/jquery-1.12.4.js"></script>
-    <script>
-        var red = document.querySelector('.poloska');
+    <div class="content">
+        <div class="about-marketing">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-1"></div>
+                    <div class="col-8">
+                        <h2>эмоциональный маркетинг</h2>
+                        <p>Фестиваль «Музыка Моего Города» — Большое массовое мероприятие, где участвует все СМИ, администрация города, лучшие артисты и звезды всероссийского масштаба.</p>
+                        <p>Став спонсором вы получите возможность представить продукцию, продвинуть марку или линейку, повысить репутацию и отношение к Вашему бренду.</p>
+                        <button class="about-marketing__button">Узнать больше</button>
+                    </div>
+                    <div class="col-1"></div>
+                    <div class="col-4">
+                        <div class="about-marketing__item cup">
+                            <img src="img/about-marketing/heart.svg" alt="">
+                            <p>Один из самых <span class="text-red">масштабный</span> и <span class="text-red">посещаемый</span> фестиваль в Иркутске!</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="about-marketing__item guitar">
+                            <img src="img/about-marketing/flash.svg" alt="">
+                            <p><span class="text-red">Яркие выступления</span> лучших музыкальных коллективов!</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="about-marketing__item dj">
+                            <img src="img/about-marketing/note.svg" alt="">
+                            <p>Многочасовой концерт на одной из <span class="text-red">центральных</span> площадок нашего города!</p>
+                        </div>
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-4">
+                        <div class="about-marketing__item star">
+                            <img src="img/about-marketing/star-icon.svg" alt="">
+                            <p>Хедлайнеры - <span class="text-red">звезды всероссийского</span> масштаба!</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="about-marketing__item eight">
+                            <img src="img/about-marketing/time.svg" alt="">
+                            <p>Ежегодное шоу <span class="text-red d-block">с 8-ми летней историей!</span></p>
+                        </div>
+                    </div>
+                    <div class="col-2"></div>
 
-        const min = 0.3, max = 0.8;
-        var animationDuration = 0.6;
+                    <div class="col-4"></div>
+                    <div class="col-4 about-marketing__red-line padding-top"></div>
+                    <div class="col-4"></div>
 
-        function setProperty(duration, size) {
-            red.style.setProperty('--animation-time', duration +'s');
-            red.style.setProperty('--animation-size', size);
-        }
+                    <div class="col-2"></div>
+                    <div class="col-8">
+                        <p class="about-marketing__general-p">Генеральный спонсор присутствует во всех рекламных материалах
+                            <br>Фестиваля «Музыка моего города»!</p>
+                    </div>
+                    <div class="col-2"></div>
 
-        setInterval(function(){
-            animationDuration = Math.random() * (max - min) + min;
-            animationSize = Math.random() * (max - min) + min;
-            setProperty(animationDuration, animationSize);
-        }, animationDuration*1000);
-    </script>
+                    <div class="col-4"></div>
+                    <div class="col-4 about-marketing__red-line"></div>
+                    <div class="col-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/index.js"></script>
 </body>
 </html>
