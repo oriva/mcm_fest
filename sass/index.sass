@@ -668,7 +668,7 @@ ul, li, ol
   background: url('../img/rider-stars/bg.jpg') no-repeat center
   -webkit-background-size: 920px auto
   background-size: 920px auto
-  padding: 300px 0
+  padding: 320px 0
   margin-top: -10vw
   &__img-left
     margin-left: -30px
@@ -688,8 +688,15 @@ ul, li, ol
   h2
     padding-bottom: 120px
 .first-callback
-  background: url('../img/first-callback/bg.svg') no-repeat center
-  padding: 90px 0
+  z-index: 1
+  position: relative
+  background: url('../img/first-callback/bg.svg') no-repeat top
+  padding: 240px 0 80px
+  margin-top: -190px
+  -webkit-background-size: 100%
+  background-size: 100%
+  &__form
+    padding-top: 60px
 @keyframes play-boom
   0%
     @include transform(scale(.85))
