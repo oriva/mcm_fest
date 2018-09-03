@@ -6,15 +6,16 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button
   margin: 0
 input[type='number']
   -moz-appearance: textfield
+html
+  overflow-x: hidden
 html, body
   min-height: 100%
-  overflow-x: hidden
 body
   font-size: 16px
   min-width: 320px
   position: relative
   line-height: 1.38
-  overflow-x: hidden
+  overflow: hidden
   margin: 0
   font-family: 'Montserrat', sans-serif
   &:active,:hover,:focus
@@ -67,8 +68,6 @@ ul, li, ol
   text-align: center!important
 .text-right
   text-align: right!important
-.text-red
-  color: #f00
 .w-100
   width: 100%
 .h-100
@@ -79,6 +78,120 @@ ul, li, ol
   color: #F00
 .font-black
   color: #000
+.political_par
+  text-align: left
+  label
+    font-size: .8em
+  a
+    text-decoration: #000 solid underline
+  [type="checkbox"]:checked, [type="checkbox"]:not(:checked)
+    position: absolute
+    opacity: 0
+  [type="checkbox"]:checked + label, [type="checkbox"]:not(:checked) + label
+    position: relative
+    padding-left: 37px
+    cursor: pointer
+    line-height: 10px
+    display: inline-block
+  [type="checkbox"]:checked + label
+    color: #000
+    a
+      color: #000
+  [type="checkbox"]:not(:checked) + label
+    color: #ff0000
+    a
+      color: #ff0000
+  [type="checkbox"]:checked + label:before, [type="checkbox"]:not(:checked) + label:before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    width: 20px
+    height: 20px
+    border: 2px solid #F00
+    margin-top: 7px
+    background: transparent
+  [type="checkbox"]:checked + label:after, [type="checkbox"]:not(:checked) + label:after
+    content: ''
+    width: 27px
+    height: 20px
+    background: url("../img/legal-yes.svg") no-repeat
+    -webkit-background-size: contain
+    background-size: contain
+    position: absolute
+    top: -3px
+    left: 3px
+    margin-top: 7px
+    @include transition(all 0.2s ease)
+  [type="checkbox"]:not(:checked) + label:after
+    opacity: 0
+    @include transform(scale(0))
+  [type="checkbox"]:checked + label:after
+    opacity: 1
+    @include transform(scale(1))
+.group
+  position: relative
+  margin-bottom: 30px
+  &__button
+    display: block
+    width: 100%
+    background-color: #F00
+    padding: 10px 20px
+    margin-bottom: 10px
+    -webkit-border-radius: 68px
+    -moz-border-radius: 68px
+    border-radius: 68px
+    @include transition(.3s)
+    &:hover
+      @include transform(scale(.9))
+  input
+    display: block
+    margin: 15px auto
+    background-color: transparent
+    padding: 10px 5px
+    width: 100%
+    border: none
+    border-bottom: 1px solid #F00
+    color: transparent
+    font-size: 1em
+    font-weight: 600
+    @include placeholder
+      color: transparent
+    &:focus, &:not(:placeholder-shown)
+      color: #000
+  label
+    font-weight: 600
+    color: #000
+    position: absolute
+    pointer-events: none
+    left: 5px
+    top: 10px
+    @include transition(0.3s ease all)
+    @include noselect
+  input:focus ~ label, input:not(:placeholder-shown) ~ label
+    top: -15px
+    transform-origin: left center
+    @include transform(scale(.6))
+  .bar
+    position: relative
+    display: block
+    width: 100%
+    &:before, &:after
+      content: ""
+      height: 3px
+      width: 0
+      bottom: 14px
+      position: absolute
+      background: #F00
+      @include transition(0.3s ease all)
+    &:before
+      left: 50%
+    &:after
+      right: 50%
+  input:focus ~ .bar:before, input:focus ~ .bar:after
+    width: 50%
+  input:not(:placeholder-shown)  ~ .bar:before, input:not(:placeholder-shown)  ~ .bar:after
+    width: 50%
 .header
   padding: 1vh 0 0
   background-color: #E9E9E9
@@ -339,10 +452,15 @@ ul, li, ol
   background-color: #E9E9E9
   border-bottom-left-radius: 40% 50px
   border-bottom-right-radius: 70% 190px
-  border-top-left-radius: 70% 220px
-  border-top-right-radius: 50% 130px
+  border-top-left-radius: 70% 400px
+  border-top-right-radius: 30% 80px
   position: relative
   overflow: hidden
+  &__bg
+    position: absolute
+    top: 0
+    left: 0
+    width: 60%
   &__phara
     font-size: 1.1em
     text-align: center
@@ -350,7 +468,7 @@ ul, li, ol
   &__grid-boy
     display: grid
     grid-template-columns: 7fr 1fr 1fr 1fr
-    padding-bottom: 150px
+    padding-bottom: 200px
     div
       padding: 15px
       display: grid
@@ -360,6 +478,7 @@ ul, li, ol
       font-size: 1.1em
       font-weight: bold
       text-transform: uppercase
+      padding-bottom: 12px
     img
       display: block
       margin: auto
@@ -369,6 +488,208 @@ ul, li, ol
   &__icon-write
     width: 16px!important
     height: auto!important
+  &__form
+    margin-top: 60px
+.dynamics
+  position: relative
+  padding: 170px 0
+  &__bg
+    position: absolute
+    right: 0
+    top: 0
+  &__p-about
+    padding: 10px 90px
+    text-align: center
+  &__graph
+    display: grid
+    grid-template-columns: repeat(10, 1fr)
+    grid-template-rows: auto
+    margin-top: 90px
+    text-align: center
+    align-items: end
+    min-height: 450px
+    .line-party
+      background: #F00 no-repeat center 20px
+      -webkit-background-size: 20% auto
+      background-size: 20% auto
+      margin: 15px auto
+      width: 60%
+      @include transition(1.7s)
+      &.line-2011
+        transition-delay: .15s
+        height: 211px
+        background-image: url(../img/dynamics/2011.svg)
+      &.line-2012
+        transition-delay: .3s
+        height: 257px
+        background-image: url(../img/dynamics/2012.svg)
+      &.line-2013
+        transition-delay: .45s
+        height: 276px
+        background-image: url(../img/dynamics/2013.svg)
+      &.line-2014
+        transition-delay: .6s
+        height: 307px
+        background-image: url(../img/dynamics/2014.svg)
+      &.line-2015
+        transition-delay: .75s
+        height: 321px
+        background-image: url(../img/dynamics/2015.svg)
+      &.line-2016
+        transition-delay: .9s
+        height: 421px
+        background-image: url(../img/dynamics/2016.svg)
+      &.line-2017
+        transition-delay: 1.05s
+        height: 459px
+        background-image: url(../img/dynamics/2017.svg)
+      &.line-2018
+        transition-delay: 1.2s
+        height: 565px
+        background-image: url(../img/dynamics/2018.svg)
+      &.line-not-ready
+        height: 0!important
+    .text-party
+      display: block
+      @include transition(1s)
+      @include transform(scale(0))
+      &.text-1
+        animation-delay: .15s!important
+        transition-delay: .15s!important
+      &.text-2
+        animation-delay: .3s!important
+        transition-delay: .3s!important
+      &.text-3
+        animation-delay: .45s!important
+        transition-delay: .45s!important
+      &.text-4
+        animation-delay: .6s!important
+        transition-delay: .6s!important
+      &.text-5
+        animation-delay: .75s!important
+        transition-delay: .75s!important
+      &.text-6
+        animation-delay: .9s!important
+        transition-delay: .9s!important
+      &.text-7
+        animation-delay: 1.05s!important
+        transition-delay: 1.05s!important
+      &.text-8
+        animation-delay: 1.2s!important
+        transition-delay: 1.2s!important
+      &.text-ready
+        animation: text-attack .9s ease-out
+        @include transform(scale(1))
+  .mega-line
+      grid-column-start: 1
+      grid-column-end: 11
+      padding: 5px 0
+      background-color: #F00
+      margin-bottom: 10px
+      width: 100%
+      @include transition(2.4s all)
+      &.line-not-ready
+        width: 0!important
+  &__org-head
+    margin: 160px 0 28px
+  &__org-para
+    margin-bottom: 88px
+  &__about
+    display: -ms-grid
+    display: grid
+    grid-template-columns: repeat(6, 1fr)
+    grid-template-rows: auto
+    div
+      position: relative
+      p
+        padding: 45px 55px 45px 35px
+        z-index: 5
+        position: relative
+        font-weight: 600
+      img
+        height: auto
+        width: auto
+        max-height: 100%
+        min-width: 133px
+        position: absolute
+        display: block
+        top: 0
+        left: 0
+        z-index: 4
+      &:nth-child(odd)
+        grid-column-start: 1
+        grid-column-end: 5
+        margin: 29px 0 -20px
+      &:nth-child(even)
+        grid-column-start: 3
+        grid-column-end: 7
+  &__last-img
+    width: 100%
+.photo-star
+  padding-bottom: 100px
+  h2
+    margin-bottom: 30px
+  &__collage
+    position: relative
+    &_item
+      pointer-events: none
+      margin: 26px 0
+      height: 155px
+      overflow: hidden
+      -webkit-background-size: auto 100%
+      background-size: auto 100%
+      &:nth-child(1)
+        background-image: url('../img/photo-stars/first.jpg')
+      &:nth-child(2)
+        background-image: url('../img/photo-stars/second.jpg')
+      &:nth-child(3)
+        background-image: url('../img/photo-stars/third.jpg')
+      &.go-animate
+        &:nth-child(1)
+          animation: position-toLeft 165s linear infinite
+        &:nth-child(2)
+          animation: position-toRight 165s linear infinite
+        &:nth-child(3)
+          animation: position-toLeft 165s linear infinite
+.thinks
+  z-index: 1
+  position: relative
+  padding: 12vw 0 15vw
+  background-image: url('../img/thinks/bg.svg')
+  -webkit-background-size: 100%
+  background-size: 100%
+  h2
+    padding-bottom: 75px
+  img
+    width: 100%
+.rider-stars
+  z-index: 0
+  position: relative
+  background: url('../img/rider-stars/bg.jpg') no-repeat center
+  -webkit-background-size: 920px auto
+  background-size: 920px auto
+  padding: 300px 0
+  margin-top: -10vw
+  &__img-left
+    margin-left: -30px
+  &__right, &__left
+    background-color: #fff
+    padding: 30px 20px
+    -webkit-border-radius: 90px
+    -moz-border-radius: 90px
+    border-radius: 90px
+    text-transform: uppercase
+    font-size: 36px
+    font-weight: 900
+  &__left
+    text-align: right
+  img
+    width: calc(100% + 30px)
+  h2
+    padding-bottom: 120px
+.first-callback
+  background: url('../img/first-callback/bg.svg') no-repeat center
+  padding: 90px 0
 @keyframes play-boom
   0%
     @include transform(scale(.85))
@@ -393,3 +714,32 @@ ul, li, ol
     @include transform(scaleY(var(--animation-size)))
   100%
     @include transform(scaleY(.1))
+@keyframes text-attack
+  from
+    @include transform(scale(0))
+  50%
+    @include transform(scale(1.4))
+  to
+    @include transform(scale(1))
+@keyframes position-toLeft
+  from
+    background-position: 0
+  25%
+    background-position: 100%
+  50%
+    background-position: 0
+  75%
+    background-position: -100%
+  to
+    background-position: 0
+@keyframes position-toRight
+  from
+    background-position: 0
+  25%
+    background-position: -100%
+  50%
+    background-position: 0
+  75%
+    background-position: 100%
+  to
+    background-position: 0
