@@ -647,11 +647,11 @@ ul, li, ol
         background-image: url('../img/photo-stars/third.jpg')
       &.go-animate
         &:nth-child(1)
-          animation: position-toLeft 165s linear infinite
+          animation: position-toLeft 465s linear infinite
         &:nth-child(2)
-          animation: position-toRight 165s linear infinite
+          animation: position-toRight 465s linear infinite
         &:nth-child(3)
-          animation: position-toLeft 165s linear infinite
+          animation: position-toLeft 465s linear infinite
 .thinks
   z-index: 1
   position: relative
@@ -711,43 +711,70 @@ ul, li, ol
       width: 100%
     &_absolute
       position: absolute
-      width: 70%
+      width: 900px
       top: 0
       left: 0
 .partners
   padding: 50px 0
+  position: relative
+  &__absolute
+    position: absolute
+    height: 100%
+    top: 0
+    left: 0
   .container
     padding: 0
   &__margin-container
     margin: 70px auto
   h2
     padding-bottom: 60px
+  span
+    margin-top: 80px
+    display: block
+    text-transform: uppercase
+    font-size: 36px
+    font-weight: 900
   iframe
     width: 500px
     height: 250px
   .right-frame
     float: right
 .working
-  h3
-    margin-bottom: 80px
   &__collage
     position: relative
     &_item
       pointer-events: none
       margin: 26px 0
-      height: 155px
+      height: 215px
       overflow: hidden
       -webkit-background-size: auto 100%
       background-size: auto 100%
       &:nth-child(1)
         background-image: url('../img/working/1.jpg')
       &:nth-child(2)
-        background-image: url('../img/working/1.jpg')
+        background-image: url('../img/working/2.jpg')
       &.go-animate
         &:nth-child(1)
-          animation: position-toLeft 165s linear infinite
+          animation: position-toLeft 25s linear infinite
         &:nth-child(2)
-          animation: position-toRight 165s linear infinite
+          animation: position-toRight 25s linear infinite
+.second-callback
+  padding: 250px 0
+.pre-contact
+  h3
+    margin-bottom: 69px
+.contact
+  background: url('../img/contacts.svg') no-repeat top
+  padding-bottom: 100px
+  overflow: hidden
+  -webkit-background-size: 100% auto
+  background-size: 100% auto
+  iframe
+    width: 100%
+    height: 400px
+  &__info
+    padding: 30px 20px
+    background-color: #F00
 @keyframes play-boom
   0%
     @include transform(scale(.85))
@@ -783,21 +810,21 @@ ul, li, ol
   from
     background-position: 0
   25%
-    background-position: 100%
+    background-position: 400%
   50%
     background-position: 0
   75%
-    background-position: -100%
+    background-position: -400%
   to
     background-position: 0
 @keyframes position-toRight
   from
     background-position: 0
   25%
-    background-position: -100%
+    background-position: -400%
   50%
     background-position: 0
   75%
-    background-position: 100%
+    background-position: 400%
   to
     background-position: 0

@@ -1,5 +1,5 @@
 var red = document.querySelectorAll('.poloska');
-var doit, intervalloh, linePos = $('.mega-line').offset().top, lineAnimate = true, phototop,photoheight, wintop, winheight;
+var doit, intervalloh, linePos = $('.mega-line').offset().top, lineAnimate = true, phototop, photoheight, wintop, winheight, worktop, workheight;
 $('.header__music .header__music_sound').click(function () {
 
     $('.header__music').toggleClass('playing'); //
@@ -62,8 +62,11 @@ $(document).scroll(function (e) {
     }
     phototop = $('.photo-star__collage').offset().top;
     photoheight = $('.photo-star__collage').height();
+    worktop = $('.working__collage').offset().top;
+    workheight = $('.working__collage').height();
     winheight = window.innerHeight;
     wintop = $(window).scrollTop();
+
     if((wintop+winheight)>(phototop) && wintop<phototop+photoheight && (!$('.photo-star__collage_item').hasClass('go-animate'))) {
         $('.photo-star__collage_item').addClass('go-animate');
         console.log('123');
@@ -71,5 +74,14 @@ $(document).scroll(function (e) {
         return false;
     } else {
         $('.photo-star__collage_item').removeClass('go-animate');
+    }
+
+    if((wintop+winheight)>(worktop) && wintop<worktop+workheight && (!$('.working__collage_item').hasClass('go-animate'))) {
+        $('.working__collage_item').addClass('go-animate');
+        console.log('123');
+    } else if ((wintop+winheight)>(worktop) && wintop<worktop+workheight) {
+        return false;
+    } else {
+        $('.working__collage_item').removeClass('go-animate');
     }
 });
