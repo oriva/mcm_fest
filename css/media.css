@@ -1,1 +1,1 @@
-@media screen and (min-width: 1440px){.partners iframe{width:595px;height:300px}}@media screen and (min-width: 1600px){.partners iframe{width:650px;height:380px}}
+@media screen and (min-width: 1366px){.working__collage_item.go-animate:nth-child(1){animation:position-toLeft 115s linear infinite}.working__collage_item.go-animate:nth-child(2){animation:position-toRight 115s linear infinite}}@media screen and (min-width: 1440px){.partners iframe{width:595px;height:300px}}@media screen and (min-width: 1600px){.partners iframe{width:650px;height:380px}}
