@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Oriva">
     <meta property="og:locale" content="ru_RU">
@@ -19,655 +19,754 @@
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/burger.css">
     <link rel="stylesheet" href="/css/media.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css"/>
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
     <title>Фестиваль MCM</title>
 </head>
 <body>
-    <div class="container menu-fixed">
-        <div class="row justify-content-end">
+<div class="video-modal">
+    <div class="container h-100">
+        <div class="row align-items-center justify-content-center h-100">
             <div class="col-auto">
-                <div id="hamburger" class="hamburglar is-closed">
-                    <div class="burger-icon">
-                        <div class="burger-container">
-                            <span class="burger-bun-top"></span>
-                            <span class="burger-filling"></span>
-                            <span class="burger-bun-bot"></span>
-                        </div>
+                <div class="video-modal__container">
+                    <div class="video-modal__closed"><img src="img/icons/no.svg" alt=""></div>
+                    <iframe width="100%" height="100%"
+                            src="https://www.youtube.com/embed/CKXNr17-_Tk?rel=0&amp;showinfo=0" frameborder="0"
+                            allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container menu-fixed">
+    <div class="row justify-content-end">
+        <div class="col-auto menu-fixed__main">
+            <div id="hamburger" class="hamburglar is-closed">
+                <div class="burger-icon">
+                    <div class="burger-container">
+                        <span class="burger-bun-top"></span>
+                        <span class="burger-filling"></span>
+                        <span class="burger-bun-bot"></span>
                     </div>
-                    <!-- svg ring containter -->
-                    <div class="burger-ring">
-                        <svg class="svg-ring">
-                            <path class="path" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="5" d="M 34 2 C 16.3 2 2 16.3 2 34 s 14.3 32 32 32 s 32 -14.3 32 -32 S 51.7 2 34 2" />
-                        </svg>
-                    </div>
-                    <!-- the masked path that animates the fill to the ring -->
-                    <svg width="0" height="0">
-                        <mask id="mask">
-                            <path xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#ff0000" stroke-miterlimit="10" stroke-width="4" d="M 34 2 c 11.6 0 21.8 6.2 27.4 15.5 c 2.9 4.8 5 16.5 -9.4 16.5 h -4" />
-                        </mask>
+                </div>
+                <!-- svg ring containter -->
+                <div class="burger-ring">
+                    <svg class="svg-ring">
+                        <path class="path" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="5"
+                              d="M 34 2 C 16.3 2 2 16.3 2 34 s 14.3 32 32 32 s 32 -14.3 32 -32 S 51.7 2 34 2"/>
                     </svg>
-                    <div class="path-burger">
-                        <div class="animate-path">
-                            <div class="path-rotation"></div>
-                        </div>
+                </div>
+                <!-- the masked path that animates the fill to the ring -->
+                <svg width="0" height="0">
+                    <mask id="mask">
+                        <path xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#ff0000" stroke-miterlimit="10"
+                              stroke-width="4" d="M 34 2 c 11.6 0 21.8 6.2 27.4 15.5 c 2.9 4.8 5 16.5 -9.4 16.5 h -4"/>
+                    </mask>
+                </svg>
+                <div class="path-burger">
+                    <div class="animate-path">
+                        <div class="path-rotation"></div>
                     </div>
                 </div>
-                <div class="menu-fixed__other">
-                    <div class="item scroll-weed-everyday" data-href="#header" style="display: none;">
-                        <div class="item__icon-block">
-                            <img src="img/icons/menu-house.svg" alt="">
-                        </div>
-                        <i>Главная</i>
+            </div>
+            <div class="menu-fixed__other">
+                <div class="item scroll-weed-everyday" data-href="#header" style="display: none;">
+                    <div class="item__icon-block">
+                        <img src="img/icons/menu-house.svg" alt="">
                     </div>
-                    <div class="item scroll-weed-everyday" data-href="#about-marketing" style="display: none;">
-                        <div class="item__icon-block">
-                            <img src="img/icons/menu-rock.svg" alt="">
-                        </div>
-                        <i>О фестивале</i>
+                    <i>Главная</i>
+                </div>
+                <div class="item scroll-weed-everyday" data-href="#about-marketing" style="display: none;">
+                    <div class="item__icon-block">
+                        <img src="img/icons/menu-rock.svg" alt="">
                     </div>
-                    <div class="item scroll-weed-everyday" data-href="#sponsorship" style="display: none;">
-                        <div class="item__icon-block">
-                            <img src="img/icons/menu-bag.svg" alt="">
-                        </div>
-                        <i>Пакеты</i>
+                    <i>О фестивале</i>
+                </div>
+                <div class="item scroll-weed-everyday" data-href="#sponsorship" style="display: none;">
+                    <div class="item__icon-block">
+                        <img src="img/icons/menu-bag.svg" alt="">
                     </div>
-                    <div class="item scroll-weed-everyday" data-href="#dynamics" style="display: none;">
-                        <div class="item__icon-block">
-                            <img src="img/icons/menu-cup.svg" alt="">
-                        </div>
-                        <i>Преимущества</i>
+                    <i>Пакеты</i>
+                </div>
+                <div class="item scroll-weed-everyday" data-href="#dynamics" style="display: none;">
+                    <div class="item__icon-block">
+                        <img src="img/icons/menu-cup.svg" alt="">
                     </div>
-                    <div class="item scroll-weed-everyday" data-href="#pre-contacts" style="display: none;">
-                        <div class="item__icon-block">
-                            <img src="img/icons/menu-phone.svg" alt="">
-                        </div>
-                        <i>Контакты</i>
+                    <i>Преимущества</i>
+                </div>
+                <div class="item scroll-weed-everyday" data-href="#pre-contacts" style="display: none;">
+                    <div class="item__icon-block">
+                        <img src="img/icons/menu-phone.svg" alt="">
                     </div>
+                    <i>Контакты</i>
                 </div>
             </div>
         </div>
     </div>
-    <header class="header" id="header">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <a class="col-3 header__logo" href="http://mcm.fm/" target="_blank">
-                    <img src="/img/header-logo.png" alt="Логотип">
-                </a>
-                <div class="col-8 header__h1">
-                    <h1 class="font-red"><small>Музыкальный фестиваль</small>
-                        «Музыка моего города»</h1>
-                </div>
-                <div class="col-10 header__info align-self-start">
-                    <label>Станьте спонсором фестиваля<br>и о вас узнают тысячи людей</label>
-                    <i class="font-red">Информационный охват<br>более 300 000 человек</i>
-                </div>
-                <div class="col-3 offset-1 text-center">
-                    <div class="header__size-play">
-                        <div class="header__play">
-                            <img src="/img/button-play__without-bg.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="header__block-watch">
-                        <img src="/img/header-arrow.svg" alt="" class="header__arrow">
-                        <button class="header__watch">Смотрите видео</button>
+</div>
+<header class="header" id="header">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <a class="col-lg-3 col-sm-2 col-6 header__logo" href="http://mcm.fm/" target="_blank">
+                <img src="/img/header-logo.png" alt="Логотип">
+            </a>
+            <div class="col-lg-8 col-12 header__h1">
+                <h1 class="font-red">
+                    <small>Музыкальный фестиваль</small>
+                    «Музыка моего города»
+                </h1>
+            </div>
+            <div class="col-lg-10 col-12 header__info align-self-start">
+                <label>Станьте спонсором фестиваля<br>и о вас узнают тысячи людей</label>
+                <i class="font-red">Информационный охват<br>более 300 000 человек</i>
+            </div>
+            <div class="col-lg-3 offset-sm-1 col-sm-10 col-3 text-center">
+                <div class="header__size-play">
+                    <div class="header__play">
+                        <img src="/img/button-play__without-bg.svg" alt="">
                     </div>
                 </div>
-                <div class="col-8"></div>
-                <div class="col-3 text-center">
-                </div>
-                <div class="col-8 offset-2 align-self-end">
-                    <div class="header__music">
-                        <div class="row align-items-center">
-                            <div class="col-auto">
-                                <img src="/img/button-play__without-bg_red.svg" alt="play" class="header__music_play header__music_sound">
-                                <img src="/img/button-pause__without-bg.svg" alt="play" class="header__music_pause header__music_sound">
-                            </div>
-                            <div class="col-auto">
-                                <label>Гимн фестиваля - NT LEX</label>
-                            </div>
-                            <p>1:25</p>
-                            <div class="col-auto">
-                                <div class="header__music_eq">
-                                    <div class="poloska"></div>
-                                    <div class="poloska"></div>
-                                    <div class="poloska"></div>
-                                    <div class="poloska"></div>
-                                    <div class="poloska"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="header__butterfly">
-                    <img src="img/header-butterfly.png" alt="">
-                </div>
-                <div class="header__duo">
-                    <img src="img/header-duo.png" alt="">
+                <div class="header__block-watch">
+                    <img src="/img/header-arrow.svg" alt="" class="header__arrow">
+                    <button class="header__watch">Смотрите видео</button>
                 </div>
             </div>
-        </div>
-    </header>
-    <div class="content">
-        <div class="about-marketing" id="about-marketing">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-1"></div>
-                    <div class="col-8">
-                        <h2>эмоциональный маркетинг</h2>
-                        <p>Фестиваль «Музыка Моего Города» — Большое массовое мероприятие, где участвует все СМИ, администрация города, лучшие артисты и звезды всероссийского масштаба.</p>
-                        <p>Став спонсором вы получите возможность представить продукцию, продвинуть марку или линейку, повысить репутацию и отношение к Вашему бренду.</p>
-                        <button class="about-marketing__button scroll-weed-everyday" data-href="#dynamics">Узнать больше</button>
-                    </div>
-                    <div class="col-1"></div>
-                    <div class="col-4">
-                        <div class="about-marketing__item cup">
-                            <img src="img/about-marketing/heart.svg" alt="">
-                            <p>Один из самых <span class="font-red">масштабный</span> и <span class="font-red">посещаемый</span> фестиваль в Иркутске!</p>
+            <div class="col-8"></div>
+            <div class="col-3 text-center">
+            </div>
+            <div class="col-lg-8 offset-lg-2 col-12 align-self-end">
+                <div class="header__music">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <img src="/img/button-play__without-bg_red.svg" alt="play"
+                                 class="header__music_play header__music_sound">
+                            <img src="/img/button-pause__without-bg.svg" alt="play"
+                                 class="header__music_pause header__music_sound">
+                        </div>
+                        <div class="col-auto">
+                            <label>Гимн фестиваля - NT LEX</label>
+                        </div>
+                        <p>1:25</p>
+                        <div class="col-auto">
+                            <div class="header__music_eq">
+                                <div class="poloska"></div>
+                                <div class="poloska"></div>
+                                <div class="poloska"></div>
+                                <div class="poloska"></div>
+                                <div class="poloska"></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-4">
-                        <div class="about-marketing__item guitar">
-                            <img src="img/about-marketing/flash.svg" alt="">
-                            <p><span class="font-red">Яркие выступления</span> лучших музыкальных коллективов!</p>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="about-marketing__item dj">
-                            <img src="img/about-marketing/note.svg" alt="">
-                            <p>Многочасовой концерт на одной из <span class="font-red">центральных</span> площадок нашего города!</p>
-                        </div>
-                    </div>
-                    <div class="col-2"></div>
-                    <div class="col-4">
-                        <div class="about-marketing__item star">
-                            <img src="img/about-marketing/star-icon.svg" alt="">
-                            <p>Хедлайнеры - <span class="font-red">звезды всероссийского</span> масштаба!</p>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="about-marketing__item eight">
-                            <img src="img/about-marketing/time.svg" alt="">
-                            <p>Ежегодное шоу <span class="font-red d-block">с 8-ми летней историей!</span></p>
-                        </div>
-                    </div>
-                    <div class="col-2"></div>
-
-                    <div class="col-4"></div>
-                    <div class="col-4">
-                        <div class="about-marketing__red-line margin-top"></div>
-                    </div>
-                    <div class="col-4"></div>
-
-                    <div class="col-2"></div>
-                    <div class="col-8">
-                        <p class="about-marketing__general-p">Генеральный спонсор присутствует во всех рекламных материалах
-                            <br>Фестиваля «Музыка моего города»!</p>
-                    </div>
-                    <div class="col-2"></div>
-
-                    <div class="col-4"></div>
-                    <div class="col-4">
-                        <div class="about-marketing__red-line"></div>
-                    </div>
-                    <div class="col-4"></div>
                 </div>
+            </div>
+            <div class="header__butterfly">
+                <img src="img/header-butterfly.png" alt="">
+            </div>
+            <div class="header__duo">
+                <img src="img/header-duo.png" alt="">
             </div>
         </div>
     </div>
-    <div class="sponsorship" id="sponsorship">
-        <img src="img/sponsorship-bg.png" alt="" class="sponsorship__bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-2"></div>
-                <div class="col-8">
-                    <h2>Спонсорские пакеты</h2>
-                    <p class="sponsorship__phara">Фестиваль  «Музыка моего города» сопровождается большой
-                        рекламной кампанией, в которой задействованы все каналы коммуникации:
-                        радио, интернет порталы, социальные сети, афишы, баннеры,
-                        аудиореклама в ТЦ и печатные СМИ.</p>
-                </div>
-                <div class="col-2"></div>
-                <div class="col-10 sponsorship__grid">
-                    <div class="sponsorship__grid-boy">
-                        <div></div>
-                        <div class="align-self-end"><img class="sponsorship__icon-write" src="img/about-marketing/text-base.svg" alt=""></div>
-                        <div class="sponsorship__red"><img class="sponsorship__icon-write" src="img/about-marketing/text-optimal.svg" alt=""></div>
-                        <div class="align-self-end"><img class="sponsorship__icon-write" src="img/about-marketing/text-prem.svg" alt=""></div>
-
-                        <div class="text-right">
-                            <label>Радио мСм</label>
-                            <p>Интервью с представителем компании в прямом эфире Радио mCm
-                                <br>Интеграция в аудиоролик в качестве партнера
-                                <br>Устные упоминания спонсора в прямом эфире Радио mCm</p>
-                        </div>
-                        <div><img src="img/about-marketing/yes_red.svg" alt=""></div>
-                        <div class="sponsorship__red"><img src="img/about-marketing/yes_white.svg" alt=""></div>
-                        <div><img src="img/about-marketing/yes_gold.svg" alt=""></div>
-                        <div class="text-right">
-                            <label>Интернет</label>
-                            <p>Публикация анонсирующих статей на интернет-порталах Ирк.ру, Weacom, Выбирай
-                                <br>Публикации в социальных сетях Радио mCm (Инста 45000, Вконтакте 40000)
-                                <br>Публикации в крупнейших группах Вконтакте по Иркутской области
-                                <br>Размещение на сайте Радио mCm</p>
-                        </div>
-                        <div><img src="img/about-marketing/yes_red.svg" alt=""></div>
-                        <div class="sponsorship__red"><img src="img/about-marketing/yes_white.svg" alt=""></div>
-                        <div><img src="img/about-marketing/yes_gold.svg" alt=""></div>
-                        <div class="text-right">
-                            <label>OutDoor</label>
-                            <p>Размещение видео на светодиодных экранах
-                                <br>Баннерная реклама на стойках «Городская афиша» на остановках
-                                <br>Размещение на билбордах
-                                </p>
-                        </div>
-                        <div><img src="img/about-marketing/no.svg" alt=""></div>
-                        <div class="sponsorship__red"><img src="img/about-marketing/yes_white.svg" alt=""></div>
-                        <div><img src="img/about-marketing/yes_gold.svg" alt=""></div>
-                        <div class="text-right">
-                            <label>inDoor</label>
-                            <p>Размещение аудиоролика в сети супермаркетов и ТЦ
-                                <br>Видеоролик в кинотеатрах
-                                <br>Размещение афиш в ТЦ и кинотеатрах
-                            </p>
-                        </div>
-                        <div><img src="img/about-marketing/no.svg" alt=""></div>
-                        <div class="sponsorship__red"><img src="img/about-marketing/yes_white.svg" alt=""></div>
-                        <div><img src="img/about-marketing/yes_gold.svg" alt=""></div>
-                        <div class="text-right">
-                            <label>Печатные СМИ</label>
-                            <p>Журнал «Выбирай»
-                                <br>Журнал «Shop&Go»
-                            </p>
-                        </div>
-                        <div><img src="img/about-marketing/no.svg" alt=""></div>
-                        <div class="sponsorship__red"><img src="img/about-marketing/yes_white.svg" alt=""></div>
-                        <div><img src="img/about-marketing/yes_gold.svg" alt=""></div>
-                        <div class="text-right">
-                            <label>Рекламная кампания в день фестиваля</label>
-                            <p>Размещение логотипа в оформлении сцены
-                                <br>Произношение рекламного текста ведущими со сцены и в прямом эфире Радио mCm
-                                <br>Проведение конкурсов от спонсора со сцены
-                                <br>Вручение подарков от спонсора
-                                <br>Возможность разработки специальной номинации от спонсора
-                                <br>Размещение промо-зоны на площадке проведения Фестиваля
-                            </p>
-                        </div>
-                        <div><img src="img/about-marketing/no.svg" alt=""></div>
-                        <div class="sponsorship__red"><img src="img/about-marketing/no.svg" alt=""></div>
-                        <div><img src="img/about-marketing/yes_gold.svg" alt=""></div>
-                        <div class="text-right"></div>
-                        <div></div>
-                        <div class="sponsorship__red"></div>
-                        <div></div>
-                    </div>
-                </div>
-                <div class="col-2"></div>
-                <div class="col-2"></div>
-                <div class="col-8">
-                    <h2>Узнайте условия и стоимость спонсорских пакетов</h2>
-                </div>
-                <div class="col-2"></div>
-                <div class="col-1"></div>
-                <div class="col-1"></div>
-                <div class="col-10">
-                    <form class="sponsorship__form">
-                        <div class="row align-items-center">
-                            <div class="col-3">
-                                <div class="group">
-                                    <input type="text" class="name_hid" name="name" autocomplete="off" placeholder="Имя">
-                                    <span class="bar"></span>
-                                    <label>Имя</label>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="group">
-                                    <input type="tel" name="phone" class="input--tel" placeholder="Телефон*" minlength="16" autocomplete="off" required="" maxlength="16">
-                                    <span class="bar"></span>
-                                    <label>Телефон*</label>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="group">
-                                    <input type="email" name="email" autocomplete="off" placeholder="-">
-                                    <span class="bar"></span>
-                                    <label>Email</label>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <button class="group__button">ОТПРАВИТЬ</button>
-                                <p class="political_par">
-                                    <input type="checkbox" id="checkbox3" checked="" required="">
-                                    <label for="checkbox3">Я принимаю <a href="/legal/">условия передачи информации</a></label>
-                                </p>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-1"></div>
-            </div>
-        </div>
-    </div>
-    <div class="dynamics" id="dynamics">
-        <img src="img/dynamics/dynamics-bg.jpg" alt="" class="dynamics__bg">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-1"></div>
-                <div class="col-10">
-                    <h2>Динамика посещаемости за 8 лет:</h2>
-                    <p class="dynamics__p-about">С каждым годом аудитория фестиваля увеличивается, поэтому наши партнеры получают все больший охват и отклик от аудитории.</p>
-                </div>
-                <div class="col-12">
-                    <div class="dynamics__graph">
-                        <div></div>
-                        <div><div class="line-party line-2011 line-not-ready"></div></div>
-                        <div><div class="line-party line-2012 line-not-ready"></div></div>
-                        <div><div class="line-party line-2013 line-not-ready"></div></div>
-                        <div><div class="line-party line-2014 line-not-ready"></div></div>
-                        <div><div class="line-party line-2015 line-not-ready"></div></div>
-                        <div><div class="line-party line-2016 line-not-ready"></div></div>
-                        <div><div class="line-party line-2017 line-not-ready"></div></div>
-                        <div class="line-check"><div class="line-party line-2018 line-not-ready"></div></div>
-                        <div></div>
-                        <div class="mega-line line-not-ready"></div>
-                        <div></div>
-                        <div><span class="text-party text-1">2011</span></div>
-                        <div><span class="text-party text-2">2012</span></div>
-                        <div><span class="text-party text-3">2013</span></div>
-                        <div><span class="text-party text-4">2014</span></div>
-                        <div><span class="text-party text-5">2015</span></div>
-                        <div><span class="text-party text-6">2016</span></div>
-                        <div><span class="text-party text-7">2017</span></div>
-                        <div><span class="text-party text-8">2018</span></div>
-                        <div></div>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <h2 class="dynamics__org-head">организатор фестиваля - «Радио мСм»</h2>
-                    <p class="dynamics__org-para text-center">Самая популярная радиостанция Иркутской области.</p>
-                </div>
-                <div class="col-6">
-                    <div class="dynamics__about">
-                        <div><img src="img/dynamics/about-1.svg" alt=""><p>Более <span class="font-red">80 000</span> слушателей ежедневно</p></div>
-                        <div><img src="img/dynamics/about-2.svg" alt=""><p><span class="font-red">10</span> лет опыта организаций мероприятий </p></div>
-                        <div><img src="img/dynamics/about-3.svg" alt=""><p><span class="font-red">12 000</span> уникальных посетителей сайта в месяц</p></div>
-                        <div><img src="img/dynamics/about-4.svg" alt=""><p><span class="font-red">42 700</span> подписчиков в instagram</p></div>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <img class="dynamics__last-img" src="img/dynamics/about-last.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="photo-star">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h2>К нам в студию приходят звёзды</h2>
-                </div>
-            </div>
-        </div>
-        <div class="photo-star__collage">
-            <div class="photo-star__collage_item"></div>
-            <div class="photo-star__collage_item"></div>
-            <div class="photo-star__collage_item"></div>
-        </div>
-    </div>
-    <div class="thinks">
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-12">
-                    <h2>Что о нас говорят люди?</h2>
-                </div>
-                <a class="col-2" data-fancybox="gallery" href="img/thinks/1.jpg"><img src="img/thinks/1.jpg" class="img-responsive" alt=""></a>
-                <a class="col-2" data-fancybox="gallery" href="img/thinks/2.jpg"><img src="img/thinks/2.jpg" class="img-responsive" alt=""></a>
-                <a class="col-2" data-fancybox="gallery" href="img/thinks/3.jpg"><img src="img/thinks/3.jpg" class="img-responsive" alt=""></a>
-                <a class="col-2" data-fancybox="gallery" href="img/thinks/4.jpg"><img src="img/thinks/4.jpg" class="img-responsive" alt=""></a>
-                <a class="col-2" data-fancybox="gallery" href="img/thinks/5.jpg"><img src="img/thinks/5.jpg" class="img-responsive" alt=""></a>
-            </div>
-        </div>
-    </div>
-    <div class="rider-stars">
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <div class="col-12">
-                    <h2 class="font-white">МЫ привозим звёзд</h2>
-                </div>
-                <div class="col-5">
-                    <img class="rider-stars__img-left" src="img/rider-stars/1.jpg" alt="">
-                </div>
-                <div class="col-7">
-                    <div class="rider-stars__right">
-                        <p>Группа «Пицца»</p>
-                    </div>
-                </div>
-                <div class="col-7">
-                    <div class="rider-stars__left">
-                        <p>Группа «USB»</p>
-                    </div>
-                </div>
-                <div class="col-5">
-                    <img src="img/rider-stars/2.jpg" alt="">
-                </div>
-                <div class="col-5">
-                    <img class="rider-stars__img-left" src="img/rider-stars/3.jpg" alt="">
-                </div>
-                <div class="col-7">
-                    <div class="rider-stars__right">
-                        <p>Группа «МАРСЕЛЬ»</p>
-                    </div>
-                </div>
-                <div class="col-7">
-                    <div class="rider-stars__left">
-                        <p>певица «МАКСИМ»</p>
-                    </div>
-                </div>
-                <div class="col-5">
-                    <img src="img/rider-stars/4.jpg" alt="">
-                </div>
-                <div class="col-5">
-                    <img class="rider-stars__img-left" src="img/rider-stars/5.jpg" alt="">
-                </div>
-                <div class="col-7">
-                    <div class="rider-stars__right">
-                        <p>Группа «Братья грим»</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="first-callback">
+</header>
+<div class="content">
+    <div class="about-marketing" id="about-marketing">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-10">
-                    <h2>оставьте заявку сейчас и Станьте  партнером фестиваля в 2019 году</h2>
-                    <form class="first-callback__form">
-                        <div class="row align-items-center">
-                            <div class="col-3">
-                                <div class="group">
-                                    <input type="text" class="name_hid" name="name" autocomplete="off" placeholder="Имя">
-                                    <span class="bar"></span>
-                                    <label>Имя</label>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="group">
-                                    <input type="tel" name="phone" class="input--tel" placeholder="Телефон*" minlength="16" autocomplete="off" required="" maxlength="16">
-                                    <span class="bar"></span>
-                                    <label>Телефон*</label>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="group">
-                                    <input type="email" name="email" autocomplete="off" placeholder="-">
-                                    <span class="bar"></span>
-                                    <label>Email</label>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <button class="group__button">ОТПРАВИТЬ</button>
-                                <p class="political_par">
-                                    <input type="checkbox" id="checkbox4" checked="" required="">
-                                    <label for="checkbox4">Я принимаю <a href="/legal/">условия передачи информации</a></label>
-                                </p>
-                            </div>
-                        </div>
-                    </form>
+                <div class="col-1"></div>
+                <div class="col-sm-8 col-10">
+                    <h2>эмоциональный маркетинг</h2>
+                    <p>Фестиваль «Музыка Моего Города» — Большое массовое мероприятие, где участвует все СМИ,
+                        администрация города, лучшие артисты и звезды всероссийского масштаба.</p>
+                    <p>Став спонсором вы получите возможность представить продукцию, продвинуть марку или линейку,
+                        повысить репутацию и отношение к Вашему бренду.</p>
+                    <button class="about-marketing__button scroll-weed-everyday" data-href="#dynamics">Узнать больше
+                    </button>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="gallery">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h2>как проходят наши фестивали</h2>
-                </div>
-                <div class="col-5 offset-2">
-                    <p>Более 25 тысяч зрителей
-                        <br>28 музыкальных коллективов
-                        <br>9 часовая программа фестиваля</p>
-                </div>
-                <div class="col-5">
-                    <p>Информационный охват
-                        <br>более 300 000 
-                        <br>человек</p>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid gallery__photo">
-            <div class="row">
-                <div class="col-12"><img class="gallery__photo_all" src="img/gallery/all.jpg" alt=""></div>
-            </div>
-        </div>
-    </div>
-    <div class="partners">
-        <img class="partners__absolute" src="img/gallery/absolute.jpg" alt="">
-        <div class="container">
-            <div class="row">
-                <div class="col-9">
-                    <h2 class="font-red">Наши партнеры о фестивале</h2>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="offset-1 col-6 text-right">
-                    <h3>Tele2</h3>
-                    <p>Не следует, однако забывать, что дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание соответствующий условий активизации. Значимость этих проблем настолько очевидна, что сложившаяся структура организации способствует подготовки и реализации направлений прогрессивного развития. Равным образом сложившаяся структура организации играет важную роль в формировании системы обучения кадров.</p>
-                </div>
-                <div class="col-5">
-                    <iframe src="https://www.youtube.com/embed/_cA7Hv-STdA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-        <div class="container partners__margin-container">
-            <div class="row align-items-center">
-                <div class="col-5">
-                    <iframe class="right-frame" src="https://www.youtube.com/embed/_cA7Hv-STdA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                </div>
-                <div class="col-6">
-                    <h3>pho me</h3>
-                    <p>Таким образом постоянное информационно-пропагандистское обеспечение нашей деятельности требуют от нас анализа дальнейших направлений развития. Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности требуют от нас анализа существенных финансовых и административных условий.</p>
-                </div>
-                <div class="col-11 offset-1">
-                    <span class="font-red">С нами работают</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="working">
-        <div class="working__collage">
-            <div class="working__collage_item"></div>
-            <div class="working__collage_item"></div>
-        </div>
-    </div>
-    <div class="second-callback">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-10">
-                    <h2>Отправьте заявку сейчас и Станьте партнером фестиваля в 2019 году </h2>
-                </div>
-                <div class="col-10">
-                    <form class="sponsorship__form">
-                        <div class="row align-items-center">
-                            <div class="col-3">
-                                <div class="group">
-                                    <input type="text" class="name_hid" name="name" autocomplete="off" placeholder="Имя">
-                                    <span class="bar"></span>
-                                    <label>Имя</label>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="group">
-                                    <input type="tel" name="phone" class="input--tel" placeholder="Телефон*" minlength="16" autocomplete="off" required="" maxlength="16">
-                                    <span class="bar"></span>
-                                    <label>Телефон*</label>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="group">
-                                    <input type="email" name="email" autocomplete="off" placeholder="-">
-                                    <span class="bar"></span>
-                                    <label>Email</label>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <button class="group__button">ОТПРАВИТЬ</button>
-                                <p class="political_par">
-                                    <input type="checkbox" id="checkbox5" checked="" required="">
-                                    <label for="checkbox5">Я принимаю <a href="/legal/">условия передачи информации</a></label>
-                                </p>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="pre-contact" id="pre-contacts">
-        <div class="container">
-            <div class="row">
-                <div class="col-9 offset-1">
-                    <h3>Свяжитесь с нами удобным для вас способом</h3>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="contact">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-3">
-                    <div class="contact__info" itemscope itemtype="http://schema.org/Organization">
-                        <div><img src="img/icons/phone.svg" alt="phone-icon"></div>
-                        <div><a itemprop="telephone" href="tel:+73952503803"><p>+7 3952 503-803</p></a></div>
-                        <div><img src="img/icons/mail.svg" alt=""></div>
-                        <div><a itemprop="email" href="mailto:info@irkmedia.ru"><p>info@irkmedia.ru</p></a></div>
-                        <div><img src="img/icons/address.svg" alt=""></div>
-                        <div><p itemprop="address">Байкальская 105А, оф. 905</p></div>
-                        <div><img src="img/icons/instagram.svg" alt="instagram icons"></div>
-                        <div><a href="https://www.instagram.com/radiomcm/" target="_blank"><p>radiomcm</p></a></div>
-                        <div><img src="img/icons/world.svg" alt="web"></div>
-                        <div><a href="http://mcm.fm/" target="_blank"><p>mcm.fm</p></a></div>
+                <div class="col-1"></div>
+                <div class="col-sm-4 col-12">
+                    <div class="about-marketing__item cup">
+                        <img src="img/about-marketing/heart.svg" alt="">
+                        <p>Один из самых <span class="font-red">масштабный</span> и <span
+                                class="font-red">посещаемый</span> фестиваль в Иркутске!</p>
                     </div>
                 </div>
-                <div class="col-9">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2441.681898940515!2d104.30754131615484!3d52.2673212626761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5da83b66b1a66f11%3A0xb843cb48c7b7623d!2z0JHQsNC50LrQsNC70YzRgdC60LDRjyDRg9C7LiwgMTA10JAsINCY0YDQutGD0YLRgdC6LCDQmNGA0LrRg9GC0YHQutCw0Y8g0L7QsdC7LiwgNjY0MDQ3!5e0!3m2!1sru!2sru!4v1536055734221" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <div class="col-sm-4 col-12">
+                    <div class="about-marketing__item guitar">
+                        <img src="img/about-marketing/flash.svg" alt="">
+                        <p><span class="font-red">Яркие выступления</span> лучших музыкальных коллективов!</p>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-12">
+                    <div class="about-marketing__item dj">
+                        <img src="img/about-marketing/note.svg" alt="">
+                        <p>Многочасовой концерт на одной из <span class="font-red">центральных</span> площадок нашего
+                            города!</p>
+                    </div>
+                </div>
+                <div class="col-2 d-none d-sm-block"></div>
+                <div class="col-sm-4 col-12">
+                    <div class="about-marketing__item star">
+                        <img src="img/about-marketing/star-icon.svg" alt="">
+                        <p>Хедлайнеры - <span class="font-red">звезды всероссийского</span> масштаба!</p>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-12">
+                    <div class="about-marketing__item eight">
+                        <img src="img/about-marketing/time.svg" alt="">
+                        <p>Ежегодное шоу <span class="font-red d-block">с 8-ми летней историей!</span></p>
+                    </div>
+                </div>
+                <div class="col-2 d-none d-sm-block"></div>
+
+                <div class="col-sm-4 col-2"></div>
+                <div class="col-sm-4 col-8">
+                    <div class="about-marketing__red-line margin-top"></div>
+                </div>
+                <div class="col-sm-4 col-2"></div>
+
+                <div class="col-2 d-none d-sm-block"></div>
+                <div class="col-sm-8 col-12">
+                    <p class="about-marketing__general-p">Генеральный спонсор присутствует во всех рекламных материалах
+                        <br>Фестиваля «Музыка моего города»!</p>
+                </div>
+                <div class="col-2 d-none d-sm-block"></div>
+
+                <div class="col-sm-4 col-2"></div>
+                <div class="col-sm-4 col-8">
+                    <div class="about-marketing__red-line"></div>
+                </div>
+                <div class="col-sm-4 col-2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sponsorship" id="sponsorship">
+    <img src="img/sponsorship-bg.png" alt="" class="sponsorship__bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-2 d-none d-sm-block"></div>
+            <div class="col-sm-8 col-12">
+                <h2>Спонсорские пакеты</h2>
+                <p class="sponsorship__phara">Фестиваль «Музыка моего города» сопровождается большой
+                    рекламной кампанией, в которой задействованы все каналы коммуникации:
+                    радио, интернет порталы, социальные сети, афишы, баннеры,
+                    аудиореклама в ТЦ и печатные СМИ.</p>
+            </div>
+            <div class="col-2 d-none d-sm-block"></div>
+            <div class="col-sm-10 col-12 sponsorship__grid">
+                <div class="sponsorship__grid-boy">
+                    <div></div>
+                    <div class="align-self-end"><img class="sponsorship__icon-write"
+                                                     src="img/about-marketing/text-base.svg" alt=""></div>
+                    <div class="sponsorship__red"><img class="sponsorship__icon-write"
+                                                       src="img/about-marketing/text-optimal.svg" alt=""></div>
+                    <div class="align-self-end"><img class="sponsorship__icon-write"
+                                                     src="img/about-marketing/text-prem.svg" alt=""></div>
+
+                    <div class="text-right">
+                        <label>Радио мСм</label>
+                        <p>Интервью с представителем компании в прямом эфире Радио mCm
+                            <br>Интеграция в аудиоролик в качестве партнера
+                            <br>Устные упоминания спонсора в прямом эфире Радио mCm</p>
+                    </div>
+                    <div><img src="img/about-marketing/yes_red.svg" alt=""></div>
+                    <div class="sponsorship__red"><img src="img/about-marketing/yes_white.svg" alt=""></div>
+                    <div><img src="img/about-marketing/yes_gold.svg" alt=""></div>
+                    <div class="text-right">
+                        <label>Интернет</label>
+                        <p>Публикация анонсирующих статей на интернет-порталах Ирк.ру, Weacom, Выбирай
+                            <br>Публикации в социальных сетях Радио mCm (Инста 45000, Вконтакте 40000)
+                            <br>Публикации в крупнейших группах Вконтакте по Иркутской области
+                            <br>Размещение на сайте Радио mCm</p>
+                    </div>
+                    <div><img src="img/about-marketing/yes_red.svg" alt=""></div>
+                    <div class="sponsorship__red"><img src="img/about-marketing/yes_white.svg" alt=""></div>
+                    <div><img src="img/about-marketing/yes_gold.svg" alt=""></div>
+                    <div class="text-right">
+                        <label>OutDoor</label>
+                        <p>Размещение видео на светодиодных экранах
+                            <br>Баннерная реклама на стойках «Городская афиша» на остановках
+                            <br>Размещение на билбордах
+                        </p>
+                    </div>
+                    <div><img src="img/about-marketing/no.svg" alt=""></div>
+                    <div class="sponsorship__red"><img src="img/about-marketing/yes_white.svg" alt=""></div>
+                    <div><img src="img/about-marketing/yes_gold.svg" alt=""></div>
+                    <div class="text-right">
+                        <label>inDoor</label>
+                        <p>Размещение аудиоролика в сети супермаркетов и ТЦ
+                            <br>Видеоролик в кинотеатрах
+                            <br>Размещение афиш в ТЦ и кинотеатрах
+                        </p>
+                    </div>
+                    <div><img src="img/about-marketing/no.svg" alt=""></div>
+                    <div class="sponsorship__red"><img src="img/about-marketing/yes_white.svg" alt=""></div>
+                    <div><img src="img/about-marketing/yes_gold.svg" alt=""></div>
+                    <div class="text-right">
+                        <label>Печатные СМИ</label>
+                        <p>Журнал «Выбирай»
+                            <br>Журнал «Shop&Go»
+                        </p>
+                    </div>
+                    <div><img src="img/about-marketing/no.svg" alt=""></div>
+                    <div class="sponsorship__red"><img src="img/about-marketing/yes_white.svg" alt=""></div>
+                    <div><img src="img/about-marketing/yes_gold.svg" alt=""></div>
+                    <div class="text-right">
+                        <label>Рекламная кампания в день фестиваля</label>
+                        <p>Размещение логотипа в оформлении сцены
+                            <br>Произношение рекламного текста ведущими со сцены и в прямом эфире Радио mCm
+                            <br>Проведение конкурсов от спонсора со сцены
+                            <br>Вручение подарков от спонсора
+                            <br>Возможность разработки специальной номинации от спонсора
+                            <br>Размещение промо-зоны на площадке проведения Фестиваля
+                        </p>
+                    </div>
+                    <div><img src="img/about-marketing/no.svg" alt=""></div>
+                    <div class="sponsorship__red"><img src="img/about-marketing/no.svg" alt=""></div>
+                    <div><img src="img/about-marketing/yes_gold.svg" alt=""></div>
+                    <div class="text-right"></div>
+                    <div></div>
+                    <div class="sponsorship__red"></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="col-2 d-none d-sm-block"></div>
+            <div class="col-2 d-none d-sm-block"></div>
+            <div class="col-sm-8 col-12">
+                <h2>Узнайте условия и стоимость спонсорских пакетов</h2>
+            </div>
+            <div class="col-2 d-none d-sm-block"></div>
+            <div class="col-1"></div>
+            <div class="col-lg-1 d-lg-block d-none"></div>
+            <div class="col-lg-10 col-12">
+                <form class="sponsorship__form">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-sm-3 col-8">
+                            <div class="group">
+                                <input type="text" class="name_hid" name="name" autocomplete="off" placeholder="Имя">
+                                <span class="bar"></span>
+                                <label>Имя</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-8">
+                            <div class="group">
+                                <input type="tel" name="phone" class="input--tel" placeholder="Телефон*" minlength="16"
+                                       autocomplete="off" required="" maxlength="16">
+                                <span class="bar"></span>
+                                <label>Телефон*</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-8">
+                            <div class="group">
+                                <input type="email" name="email" autocomplete="off" placeholder="-">
+                                <span class="bar"></span>
+                                <label>Email</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-8">
+                            <button class="group__button">ОТПРАВИТЬ</button>
+                            <p class="political_par">
+                                <input type="checkbox" id="checkbox3" checked="" required="">
+                                <label for="checkbox3">Я принимаю <a href="/legal/">условия передачи
+                                    информации</a></label>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-1 d-lg-block d-none"></div>
+        </div>
+    </div>
+</div>
+<div class="dynamics" id="dynamics">
+    <img src="img/dynamics/dynamics-bg.jpg" alt="" class="dynamics__bg">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-1 d-sm-block d-none"></div>
+            <div class="col-sm-10 col-12">
+                <h2>Динамика посещаемости за 8 лет:</h2>
+                <p class="dynamics__p-about">С каждым годом аудитория фестиваля увеличивается, поэтому наши партнеры
+                    получают все больший охват и отклик от аудитории.</p>
+            </div>
+            <div class="col-12">
+                <div class="dynamics__graph">
+                    <div></div>
+                    <div>
+                        <div class="line-party line-2011 line-not-ready"></div>
+                    </div>
+                    <div>
+                        <div class="line-party line-2012 line-not-ready"></div>
+                    </div>
+                    <div>
+                        <div class="line-party line-2013 line-not-ready"></div>
+                    </div>
+                    <div>
+                        <div class="line-party line-2014 line-not-ready"></div>
+                    </div>
+                    <div>
+                        <div class="line-party line-2015 line-not-ready"></div>
+                    </div>
+                    <div>
+                        <div class="line-party line-2016 line-not-ready"></div>
+                    </div>
+                    <div>
+                        <div class="line-party line-2017 line-not-ready"></div>
+                    </div>
+                    <div class="line-check">
+                        <div class="line-party line-2018 line-not-ready"></div>
+                    </div>
+                    <div></div>
+                    <div class="mega-line line-not-ready"></div>
+                    <div></div>
+                    <div><span class="text-party text-1">2011</span></div>
+                    <div><span class="text-party text-2">2012</span></div>
+                    <div><span class="text-party text-3">2013</span></div>
+                    <div><span class="text-party text-4">2014</span></div>
+                    <div><span class="text-party text-5">2015</span></div>
+                    <div><span class="text-party text-6">2016</span></div>
+                    <div><span class="text-party text-7">2017</span></div>
+                    <div><span class="text-party text-8">2018</span></div>
+                    <div></div>
+                </div>
+                <div class="dynamics__graph-mobile">
+                    <div class="mob-party"><span>25 000 чел.</span></div>
+                    <line class="not-ready"></line>
+                    <div></div>
+                    <div class="mob-party"><span>17 000 чел.</span></div>
+                    <div></div>
+                    <div class="mob-party"><span>12 000 чел.</span></div>
+                    <div></div>
+                    <div class="mob-party"><span>11 000 чел.</span></div>
+                    <div></div>
+                    <div class="mob-party"><span>10 000 чел.</span></div>
+                    <div></div>
+                    <div class="mob-party"><span>8 000 чел.</span></div>
+                    <div></div>
+                    <div class="mob-party"><span>6 000 чел.</span></div>
+                    <div></div>
+                    <div class="mob-party"><span>4 000 чел.</span></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="col-12">
+                <h2 class="dynamics__org-head">организатор фестиваля - «Радио мСм»</h2>
+                <p class="dynamics__org-para text-center">Самая популярная радиостанция Иркутской области.</p>
+            </div>
+            <div class="col-lg-6 col-sm-8 col-10 offset-sm-2 offset-1 mob-order-2">
+                <div class="dynamics__about">
+                    <div><img src="img/dynamics/about-1.svg" alt="">
+                        <p>Более <span class="font-red">80 000</span> слушателей ежедневно</p></div>
+                    <div><img src="img/dynamics/about-2.svg" alt="">
+                        <p><span class="font-red">10</span> лет опыта организаций мероприятий </p></div>
+                    <div><img src="img/dynamics/about-3.svg" alt="">
+                        <p><span class="font-red">12 000</span> уникальных посетителей сайта в месяц</p></div>
+                    <div><img src="img/dynamics/about-4.svg" alt="">
+                        <p><span class="font-red">42 700</span> подписчиков в instagram</p></div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-12 d-lg-block d-sm-none d-block mob-order-1">
+                <img class="dynamics__last-img" src="img/dynamics/about-last.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="photo-star">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>К нам в студию приходят звёзды</h2>
+            </div>
+        </div>
+    </div>
+    <div class="photo-star__collage">
+        <div class="photo-star__collage_item"></div>
+        <div class="photo-star__collage_item"></div>
+        <div class="photo-star__collage_item"></div>
+    </div>
+</div>
+<div class="thinks">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <h2>Что о нас говорят люди?</h2>
+            </div>
+            <div class="col-12">
+                <div class="row justify-content-center owl-carousel ow-mob">
+                    <a class="col-sm-2 col-12" data-fancybox="gallery" href="img/thinks/1.jpg"><img src="img/thinks/1.jpg"
+                                                                                          class="img-responsive" alt=""></a>
+                    <a class="col-sm-2 col-12" data-fancybox="gallery" href="img/thinks/2.jpg"><img src="img/thinks/2.jpg"
+                                                                                          class="img-responsive" alt=""></a>
+                    <a class="col-sm-2 col-12" data-fancybox="gallery" href="img/thinks/3.jpg"><img src="img/thinks/3.jpg"
+                                                                                          class="img-responsive" alt=""></a>
+                    <a class="col-sm-2 col-12" data-fancybox="gallery" href="img/thinks/4.jpg"><img src="img/thinks/4.jpg"
+                                                                                          class="img-responsive" alt=""></a>
+                    <a class="col-sm-2 col-12" data-fancybox="gallery" href="img/thinks/5.jpg"><img src="img/thinks/5.jpg"
+                                                                                          class="img-responsive" alt=""></a>
                 </div>
             </div>
         </div>
     </div>
-    <div class="footer">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-4"><a href="https://litvinenko.digital/" target="_blank"><img src="img/icons/logo_litvinenko.svg" alt="logo"></a></div>
-                <div class="col-4 text-center"><a href="/legal">Политика конфиденциальности</a></div>
-                <div class="col-4 text-right"><a href="http://mcmfest.ru/" target="_blank">mcmfest.ru</a></div>
+</div>
+<div class="rider-stars">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-sm-12 col-6 offset-3 offset-sm-0">
+                <h2 class="font-white">МЫ привозим звёзд</h2>
+            </div>
+            <div class="col-5">
+                <img class="rider-stars__img-left" src="img/rider-stars/1.jpg" alt="">
+            </div>
+            <div class="col-7">
+                <div class="rider-stars__right">
+                    <p>Группа «Пицца»</p>
+                </div>
+            </div>
+            <div class="col-7">
+                <div class="rider-stars__left">
+                    <p>Группа «USB»</p>
+                </div>
+            </div>
+            <div class="col-5">
+                <img src="img/rider-stars/2.jpg" alt="">
+            </div>
+            <div class="col-5">
+                <img class="rider-stars__img-left" src="img/rider-stars/3.jpg" alt="">
+            </div>
+            <div class="col-7">
+                <div class="rider-stars__right">
+                    <p>Группа «МАРСЕЛЬ»</p>
+                </div>
+            </div>
+            <div class="col-7">
+                <div class="rider-stars__left">
+                    <p>певица «МАКСИМ»</p>
+                </div>
+            </div>
+            <div class="col-5">
+                <img src="img/rider-stars/4.jpg" alt="">
+            </div>
+            <div class="col-5">
+                <img class="rider-stars__img-left" src="img/rider-stars/5.jpg" alt="">
+            </div>
+            <div class="col-7">
+                <div class="rider-stars__right">
+                    <p>Группа «Братья грим»</p>
+                </div>
             </div>
         </div>
     </div>
-    <script src="/js/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
-    <script src="/js/index.js"></script>
+</div>
+<div class="first-callback">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-10">
+                <h2>оставьте заявку сейчас и Станьте партнером фестиваля в 2019 году</h2>
+                <form class="first-callback__form">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-sm-3 col-8">
+                            <div class="group">
+                                <input type="text" class="name_hid" name="name" autocomplete="off" placeholder="Имя">
+                                <span class="bar"></span>
+                                <label>Имя</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-8">
+                            <div class="group">
+                                <input type="tel" name="phone" class="input--tel" placeholder="Телефон*" minlength="16"
+                                       autocomplete="off" required="" maxlength="16">
+                                <span class="bar"></span>
+                                <label>Телефон*</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-8">
+                            <div class="group">
+                                <input type="email" name="email" autocomplete="off" placeholder="-">
+                                <span class="bar"></span>
+                                <label>Email</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-8">
+                            <button class="group__button">ОТПРАВИТЬ</button>
+                            <p class="political_par">
+                                <input type="checkbox" id="checkbox4" checked="" required="">
+                                <label for="checkbox4">Я принимаю <a href="/legal/">условия передачи
+                                    информации</a></label>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="gallery">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>как проходят наши фестивали</h2>
+            </div>
+            <div class="col-sm-5 offset-sm-2 col-6">
+                <p>Более 25 тысяч зрителей
+                    <br>28 музыкальных коллективов
+                    <br>9 часовая программа фестиваля</p>
+            </div>
+            <div class="col-sm-5 col-6">
+                <p>Информационный охват
+                    <br>более 300 000 
+                    <br>человек</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid gallery__photo">
+        <div class="row">
+            <div class="col-12"><img class="gallery__photo_all" src="img/gallery/all.jpg" alt=""></div>
+        </div>
+    </div>
+</div>
+<div class="partners">
+    <img class="partners__absolute" src="img/gallery/absolute.jpg" alt="">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-sm-12 offset-sm-0 col-10 offset-1">
+                <h2 class="font-red">Наши партнеры о фестивале</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="offset-lg-1 col-lg-6 col-sm-5 col-12 text-right mob-order-2">
+                <h3 class="d-sm-block d-none">Tele2</h3>
+                <p>Не следует, однако забывать, что дальнейшее развитие различных форм деятельности в значительной
+                    степени обуславливает создание соответствующий условий активизации. Значимость этих проблем
+                    настолько очевидна, что сложившаяся структура организации способствует подготовки и реализации
+                    направлений прогрессивного развития. Равным образом сложившаяся структура организации играет важную
+                    роль в формировании системы обучения кадров.</p>
+            </div>
+            <div class="col-lg-5 col-sm-7 col-12 mob-order-1">
+                <h3 class="d-sm-none d-block">Tele2</h3>
+                <iframe src="https://www.youtube.com/embed/_cA7Hv-STdA" frameborder="0"
+                        allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="container partners__margin-container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 col-sm-7 col-12">
+                <h3 class="d-sm-none d-block">pho me</h3>
+                <iframe class="right-frame" src="https://www.youtube.com/embed/_cA7Hv-STdA" frameborder="0"
+                        allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="col-lg-6 col-sm-5 col-12">
+                <h3 class="d-sm-block d-none">pho me</h3>
+                <p>Таким образом постоянное информационно-пропагандистское обеспечение нашей деятельности требуют от нас
+                    анализа дальнейших направлений развития. Значимость этих проблем настолько очевидна, что дальнейшее
+                    развитие различных форм деятельности требуют от нас анализа существенных финансовых и
+                    административных условий.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="working">
+    <div class="col-lg-11 offset-lg-1 col-sm-12 offset-sm-0 col-6 offset-3">
+        <h3 class="font-red">С нами работают</h3>
+    </div>
+    <div class="working__collage">
+        <div class="working__collage_item"></div>
+        <div class="working__collage_item"></div>
+    </div>
+</div>
+<div class="second-callback">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-12">
+                <h2>Отправьте заявку сейчас и Станьте партнером фестиваля в 2019 году </h2>
+            </div>
+            <div class="col-lg-10 col-12">
+                <form class="sponsorship__form">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-sm-3 col-8">
+                            <div class="group">
+                                <input type="text" class="name_hid" name="name" autocomplete="off" placeholder="Имя">
+                                <span class="bar"></span>
+                                <label>Имя</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-8">
+                            <div class="group">
+                                <input type="tel" name="phone" class="input--tel" placeholder="Телефон*" minlength="16"
+                                       autocomplete="off" required="" maxlength="16">
+                                <span class="bar"></span>
+                                <label>Телефон*</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-8">
+                            <div class="group">
+                                <input type="email" name="email" autocomplete="off" placeholder="-">
+                                <span class="bar"></span>
+                                <label>Email</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-8">
+                            <button class="group__button">ОТПРАВИТЬ</button>
+                            <p class="political_par">
+                                <input type="checkbox" id="checkbox5" checked="" required="">
+                                <label for="checkbox5">Я принимаю <a href="/legal/">условия передачи
+                                    информации</a></label>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pre-contact" id="pre-contacts">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-10 offset-1">
+                <h3>Свяжитесь с нами удобным для вас способом</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="contact">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-3 col-4">
+                <div class="contact__info" itemscope itemtype="http://schema.org/Organization">
+                    <div><img src="img/icons/phone.svg" alt="phone-icon"></div>
+                    <div><a itemprop="telephone" href="tel:+73952503803"><p>+7 3952 503-803</p></a></div>
+                    <div><img src="img/icons/mail.svg" alt=""></div>
+                    <div><a itemprop="email" href="mailto:info@irkmedia.ru"><p>info@irkmedia.ru</p></a></div>
+                    <div><img src="img/icons/address.svg" alt=""></div>
+                    <div><p itemprop="address">Байкальская 105А, оф. 905</p></div>
+                    <div><img src="img/icons/instagram.svg" alt="instagram icons"></div>
+                    <div><a href="https://www.instagram.com/radiomcm/" target="_blank"><p>radiomcm</p></a></div>
+                    <div><img src="img/icons/world.svg" alt="web"></div>
+                    <div><a href="http://mcm.fm/" target="_blank"><p>mcm.fm</p></a></div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-8">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2441.681898940515!2d104.30754131615484!3d52.2673212626761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5da83b66b1a66f11%3A0xb843cb48c7b7623d!2z0JHQsNC50LrQsNC70YzRgdC60LDRjyDRg9C7LiwgMTA10JAsINCY0YDQutGD0YLRgdC6LCDQmNGA0LrRg9GC0YHQutCw0Y8g0L7QsdC7LiwgNjY0MDQ3!5e0!3m2!1sru!2sru!4v1536055734221"
+                        frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-sm-4 col-12 mob-order-3"><a href="https://litvinenko.digital/" target="_blank"><img
+                    src="img/icons/logo_litvinenko.svg" alt="logo"></a></div>
+            <div class="col-sm-4 col-12 text-center mob-order-1"><a href="/legal" class="footer_legal">Политика
+                конфиденциальности</a></div>
+            <div class="col-sm-4 col-12 text-right mob-order-2"><a href="http://mcmfest.ru/">mcmfest.ru</a></div>
+        </div>
+    </div>
+</div>
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/index.js"></script>
 </body>
 </html>

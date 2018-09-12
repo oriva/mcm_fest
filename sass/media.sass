@@ -1,16 +1,443 @@
-@media screen and (min-width:1366px)
+@import "mixin"
+@media screen and (min-width:1200px)
   .working__collage_item.go-animate
     &:nth-child(1)
-      animation: position-toLeft 115s linear infinite
+      animation: position-toLeft 125s linear infinite
     &:nth-child(2)
-      animation: position-toRight 115s linear infinite
+      animation: position-toRight 125s linear infinite
+  .header__logo img
+    left: 0%
+  .first-callback
+    padding: 220px 0 130px
+    -webkit-background-size: 1440px
+    background-size: 1440px
+@media screen and (min-width:1366px)
+
 @media screen and (min-width:1440px)
+  .header__logo img
+    left: -40%
   .partners
     iframe
       width: 595px
       height: 300px
+  .first-callback
+    padding: 320px 0 250px
+    -webkit-background-size: 1980px
+    background-size: 1980px
 @media screen and (min-width:1600px)
   .partners
     iframe
       width: 650px
       height: 380px
+  .working__collage_item.go-animate
+    &:nth-child(1), &:nth-child(2)
+      animation-duration: 25s
+@media screen and (max-width:992px)
+  h2, h3
+    font-size: 24px
+  p
+    font-size: .7em
+  .header
+    &__logo
+      img
+        width: 85%
+    &__h1
+      h1
+        font-size: 23px
+    &__info
+      label
+        font-size: 18px
+        line-height: 23px
+      i
+        font-size: 15px
+    &__watch
+      font-size: 15px
+  .about-marketing
+    padding: 70px 0
+    p
+      margin: 15px 0
+    &__button
+      margin-bottom: 0px
+    &__item
+      height: 120px
+      margin-top: 60px
+      img
+        height: 45px
+      p
+        font-size: .7em
+    &__general-p
+      font-size: 1.1em
+      font-weight: 600
+  .sponsorship
+    padding: 135px 0
+    &__grid-boy
+      padding-bottom: 110px
+  .dynamics
+    padding: 100px 0
+    &__graph
+      display: none
+      &-mobile
+        display: grid
+        grid-template-columns: 1fr 20px 40px
+        grid-template-rows: auto
+        grid-template-areas: ". line ." ". line ." ". line ." ". line ." ". line ." ". line ." ". line ." ". line ." ". line ."
+        margin-top: 90px
+        text-align: left
+        min-height: 250px
+        align-items: center
+        div
+        .mob-party
+          background: #F00 no-repeat center 20px
+          -webkit-background-size: 20% auto
+          background-size: 20% auto
+          margin: 0 0 0 auto
+          width: 30%
+          height: 0
+          padding: 20px
+          justify-self: end
+          @include transition(1.7s)
+          span
+            color: #FFF
+            font-weight: 600
+          &.mob-2011
+            transition-delay: .15s
+            height: 100%
+            margin: 25px 0 25px auto
+          &.mob-2012
+            transition-delay: .3s
+            height: 100%
+            margin: 25px 0 25px auto
+          &.mob-2013
+            transition-delay: .45s
+            height: 100%
+            margin: 25px 0 25px auto
+          &.mob-2014
+            transition-delay: .6s
+            height: 100%
+            margin: 25px 0 25px auto
+          &.mob-2015
+            transition-delay: .75s
+            height: 100%
+            margin: 25px 0 25px auto
+          &.mob-2016
+            transition-delay: .9s
+            height: 100%
+            margin: 25px 0 25px auto
+          &.mob-2017
+            transition-delay: 1.05s
+            height: 100%
+            margin: 25px 0 25px auto
+          &.mob-2018
+            transition-delay: 1.2s
+            height: 100%
+            margin: 25px 0 25px auto
+        line
+          grid-area: line
+          align-self: start
+          height: 100%
+          width: 100%
+          background-color: #F00
+          @include transition(.3s)
+          &.not-ready
+            height: 0
+    &__org
+      &-head
+        margin: 100px 0 15px
+      &-para
+        margin-bottom: 28px
+    &__about
+      div
+        p
+          padding: 45px 35px 45px 25px
+        &:nth-child(even)
+          grid-column-start: 4
+          grid-column-end: 8
+  .partners iframe
+    width: 370px
+    height: 200px
+  .political_par label
+    font-size: 0.5em
+    padding-top: 6px
+  .photo-star__collage_item
+    height: 115px
+    &.go-animate:nth-child(1), &.go-animate:nth-child(2), &.go-animate:nth-child(3)
+      animation-duration: 720s
+  .rider-stars
+    -webkit-background-size: 390px auto
+    background-size: 390px auto
+    padding: 160px 0
+    h2
+      padding-bottom: 60px
+    &__left
+      @include transform(translateX(-70px))
+    &__right
+      @include transform(translateX(70px))
+    &__left, &__right
+      font-size: 26px
+  .first-callback
+    padding: 90px 0 50px
+  .gallery
+    padding: 60px 0
+    .gallery__photo
+      margin-top: 60px
+  .working
+    &__collage_item
+      height: 145px
+  .second-callback
+    padding: 70px 0
+  .footer
+    padding: 50px 0
+  .video-modal__container
+    width: 600px
+    height: 320px
+@media screen and (max-width:768px)
+  .group
+    input
+      padding: 7px 5px
+    label
+      left: 0px
+  .political_par
+    [type="checkbox"]:checked + label:before, [type="checkbox"]:not(:checked) + label:before
+      @include transform(scale(.8))
+    [type="checkbox"]:checked + label:after, [type="checkbox"]:not(:checked) + label:after
+      width: 21px
+      height: 17px
+      top: 0
+      left: 3px
+  h2, h3
+    font-size: 19px
+  .header
+    height: auto
+    padding: 8vh 0 6vh
+    .h-100
+      height: auto
+    &__duo
+      img
+        display: none
+    &__logo
+      img
+        left: -40%
+        width: 125%
+    &__h1
+      text-align: center
+      h1
+        font-size: 19px
+        small
+          margin: 0
+    &__info
+      text-align: center
+    &__size-play
+      display: none
+    &__music
+      margin-top: 20px
+    &__block-watch
+      left: 0
+      margin-top: 10px
+    &__arrow
+      display: none
+  .hamburglar
+    margin: 6.4vh 0px 10px auto
+  .dynamics__about div:nth-child(odd)
+    margin: 20px 0 20px
+  .first-callback__form
+    padding-top: 10px
+    font-size: 0.5em
+@media screen and (max-width:575.98px)
+  h2, h3
+    font-size: 22px
+  .mob-order-1
+    order: 1
+  .mob-order-2
+    order: 2
+  .mob-order-3
+    order: 3
+  .video-modal
+    &__container
+      width: 300px
+      height: 180px
+      min-width: 99%
+    &__closed
+      height: 20px
+      width: 20px
+  .menu-fixed__main
+    margin: 0
+    padding: 1vh 0 6vh
+  .hamburglar
+    margin: 2.4vh 0px 10px auto
+  .political_par label
+    font-size: 1em
+  .group
+    margin: 0
+    &__button
+      margin-top: 20px
+  .header
+    padding: 3vh 0 6vh
+    border-bottom-left-radius: 40% 20px
+    border-bottom-right-radius: 40% 50px
+    &__h1
+      margin-top: 40px
+      h1
+        font-size: 30px
+        margin-bottom: 10px
+        small
+          font-size: .4em
+          margin-bottom: 10px
+    &__info
+      margin-bottom: 100px
+    &__logo img
+      left: 0
+      width: 70%
+    &__arrow, &__duo img, &__size-play
+      display: block
+    &__block-watch
+      margin: 0
+    &__size-play
+      width: 80px
+      height: 80px
+      left: 100%
+    &__play
+      background-color: #ff0000
+    &__duo
+      height: auto
+      width: 113%
+      bottom: -60px
+      left: 20%
+      img
+        height: auto
+        width: 100%
+        left: 0
+        right: 0
+        margin: 0
+        padding: 0
+    &__music
+      display: none
+  .about-marketing
+    &__item
+      width: 55%
+      margin-left: auto
+      margin-right: auto
+      margin-top: 100px
+      p
+        padding-left: 45px
+        font-size: 0.9em
+      img
+        margin-right: 40px!important
+  .sponsorship
+    padding: 75px 0
+    border-top-left-radius: 100% 76px
+    border-top-right-radius: 30% 23px
+    border-bottom-left-radius: 28% 11px
+    border-bottom-right-radius: 59% 50px
+    &__phara
+      font-size: 0.8em
+    &__grid-boy
+      img
+        height: 20px
+    &__icon-write
+      width: 14px !important
+    &__form
+      text-align: center
+      .political_par
+        display: inline-block
+  .dynamics
+    &__p-about
+      padding: 10px
+    &__about
+      grid-template-columns: 1fr
+      div
+        img
+          max-height: 70px
+          min-width: auto
+        p
+          padding: 35px 0 15px 40px
+          font-size: 1.25em
+        &:nth-child(odd)
+          grid-column-start: 1
+          grid-column-end: 8
+  .rider-stars
+    -webkit-background-size: 250px auto
+    background-size: 250px auto
+    padding: 100px 0
+    margin-top: -15vw
+    h2
+      padding-bottom: 40px
+    img
+      width: calc(90% + 30px)
+    &__left, &__right
+      font-size: 14px
+      padding: 10px 20px
+      @include transform(translateX(0px))
+  .first-callback
+    margin-top: -50px
+    background: #e9e9e9
+    border-top-left-radius: 100% 76px
+    border-top-right-radius: 30% 23px
+    border-bottom-left-radius: 28% 11px
+    border-bottom-right-radius: 59% 50px
+    &__form
+      font-size: 1em
+  .partners
+    &__absolute
+      height: auto
+      width: 100%
+    h3
+      text-align: center !important
+    .text-right, p
+      text-align: left
+      padding: 0 15px
+    .right-frame
+      float: none
+    iframe
+      margin: 20px auto
+      display: block
+      width: 100%
+      padding: 0 15px
+    &__margin-container
+      margin: 50px auto
+  .thinks
+    background: #E9E9E9
+    border-top-left-radius: 100% 76px
+    border-top-right-radius: 30% 23px
+    border-bottom-left-radius: 28% 11px
+    border-bottom-right-radius: 59% 50px
+    .owl-carousel
+      width: calc(100% + 30px)
+  .working
+    h3
+      text-align: center
+    &__collage_item
+      height: 100px
+  .second-callback
+    background-color: #e9e9e9
+    border-top-left-radius: 100% 55px
+  .pre-contact
+    z-index: 0
+    position: relative
+    background-color: #e9e9e9
+    margin-bottom: -50px
+    padding-bottom: 40px
+    h3
+      text-align: center
+  .contact
+    background: #000
+    border-top-left-radius: 50% 55px
+    border-top-right-radius: 50% 23px
+    padding: 30px 0
+    iframe
+      width: 110%
+      height: 260px
+    &__info
+      width: 260%
+      padding: 10px 20px
+      a, p
+        font-size: 12px
+  .footer
+    padding: 20px 0
+    .col-12
+      text-align: center !important
+    .footer_legal
+      font-size: 15px
+    a
+      font-size: 22px
+      margin-bottom: 22px
+

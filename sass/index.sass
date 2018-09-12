@@ -8,6 +8,7 @@ input[type='number']
   -moz-appearance: textfield
 html
   overflow-x: hidden
+  width: 100%
 html, body
   min-height: 100%
 body
@@ -63,6 +64,8 @@ ul, li, ol
   margin: 0
   padding: 0
   list-style-type: none
+.overfloff
+  overflow: hidden
 .text-left
   text-align: left!important
 .text-center
@@ -194,50 +197,53 @@ ul, li, ol
     width: 50%
   input:not(:placeholder-shown)  ~ .bar:before, input:not(:placeholder-shown)  ~ .bar:after
     width: 50%
-.menu-fixed__other
-  .item
-    display: flex
-    justify-content: flex-end
-    align-items: center
-    i
-      order: 1
-      top: 0
-      font-size: 14px
-      margin-right: 12px
-      font-style: normal
-      opacity: 0
-      @include transition(.3s)
-    &__icon-block
-      display: none
-      order: 2
-      position: relative
-      height: 40px
-      width: 40px
-      background-color: #000
-      margin: 5px 13px 15px 0px
-      -webkit-border-radius: 20px
-      -moz-border-radius: 20px
-      border-radius: 20px
-      cursor: pointer
-      @include transition(.3s)
-      &.hide
-        animation: goOut .4s both
-        display: block
-      &.show
-        animation: text-attack .4s both
-        display: block
-      &:hover
-        background-color: #F00
-        & ~ i
-          opacity: 1
-      img
-        position: absolute
-        height: 20px
+.menu-fixed
+  &__main
+    margin-right: -50px
+  &__other
+    .item
+      display: flex
+      justify-content: flex-end
+      align-items: center
+      i
+        order: 1
         top: 0
-        bottom: 0
-        left: 0
-        right: 0
-        margin: auto
+        font-size: 14px
+        margin-right: 12px
+        font-style: normal
+        opacity: 0
+        @include transition(.3s)
+      &__icon-block
+        display: none
+        order: 2
+        position: relative
+        height: 40px
+        width: 40px
+        background-color: #000
+        margin: 5px 13px 15px 0px
+        -webkit-border-radius: 20px
+        -moz-border-radius: 20px
+        border-radius: 20px
+        cursor: pointer
+        @include transition(.3s)
+        &.hide
+          animation: goOut .4s both
+          display: block
+        &.show
+          animation: text-attack .4s both
+          display: block
+        &:hover
+          background-color: #F00
+          & ~ i
+            opacity: 1
+        img
+          position: absolute
+          height: 20px
+          top: 0
+          bottom: 0
+          left: 0
+          right: 0
+          margin: auto
 .header
   padding: 1vh 0 0
   background-color: #E9E9E9
@@ -257,7 +263,7 @@ ul, li, ol
     img
       position: relative
       width: 70%
-      left: -40%
+      left: 0
       @include transition(.3s)
     &:hover
       img
@@ -432,6 +438,44 @@ ul, li, ol
       display: block
       margin: auto
       padding-left: 10%
+.video-modal
+  z-index: 100
+  position: fixed
+  height: 100vh
+  width: 100vw
+  background-color: rgba(0, 0, 0, 1)
+  @include transition(.3s)
+  @include transform(translateY(-110vh))
+  iframe
+    @include transition(.5s)
+    @include transform(translateY(-150vh))
+    transition-delay: .2s
+  &__closed
+    display: block
+    margin-left: auto
+    height: 40px
+    width: 40px
+    margin-bottom: 10px
+    cursor: pointer
+    @include transition(.4s)
+    @include transform(translateY(-110vh))
+    transition-delay: .4s
+    img
+      width: 100%
+      height: 100%
+      @include transition(.3s)
+    &:hover
+      img
+        @include transform(scale(.8))
+  &__container
+    position: relative
+    width: 800px
+    height: 450px
+    text-align: right
+  &.show
+    @include transform(translateY(0))
+    iframe, .video-modal__closed
+      @include transform(translateY(0))
 .about-marketing
   padding: 118px 0
   p
@@ -454,6 +498,7 @@ ul, li, ol
     height: 200px
     -webkit-background-size: auto 100%
     background-size: auto 100%
+    background-repeat: no-repeat
     margin-top: 100px
     img
       display: block
@@ -467,29 +512,29 @@ ul, li, ol
       padding-left: 66px
       margin: 20px 0 0
     &.cup
-      background: url("../img/about-marketing/cup.svg") no-repeat
+      background-image: url("../img/about-marketing/cup.svg")
       img
         margin-right: 20%
     &.guitar
-      background: url("../img/about-marketing/guitar.svg") no-repeat
+      background-image: url("../img/about-marketing/guitar.svg")
       p
         padding-right: 50px
       img
         margin-right: 70px
     &.dj
-      background: url("../img/about-marketing/dj.svg") no-repeat
+      background-image: url("../img/about-marketing/dj.svg")
       p
         padding-right: 35px
       img
         margin-right: 70px
     &.star
-      background: url("../img/about-marketing/star.svg") no-repeat
+      background-image: url("../img/about-marketing/star.svg")
       p
         padding-right: 35px
       img
         margin-right: 70px
     &.eight
-      background: url("../img/about-marketing/eight.svg") no-repeat
+      background-image: url("../img/about-marketing/eight.svg")
       img
         margin-right: 60px
   &__red-line
@@ -555,6 +600,8 @@ ul, li, ol
     padding: 10px 90px
     text-align: center
   &__graph
+    &-mobile
+      display: none
     display: grid
     grid-template-columns: repeat(10, 1fr)
     grid-template-rows: auto
@@ -710,6 +757,9 @@ ul, li, ol
   background-image: url('../img/thinks/bg.svg')
   -webkit-background-size: 100%
   background-size: 100%
+  background-repeat: no-repeat
+  .owl-carousel
+    display: flex
   h2
     padding-bottom: 75px
   img
@@ -717,6 +767,7 @@ ul, li, ol
 .rider-stars
   z-index: -1
   position: relative
+  overflow: hidden
   background: url('../img/rider-stars/bg.jpg') no-repeat center
   -webkit-background-size: 920px auto
   background-size: 920px auto
@@ -764,8 +815,9 @@ ul, li, ol
       top: 0
       left: 0
 .partners
-  padding: 50px 0
+  padding: 30px 0
   position: relative
+  margin-bottom: 55px
   &__absolute
     position: absolute
     height: 100%
@@ -804,9 +856,9 @@ ul, li, ol
         background-image: url('../img/working/2.jpg')
       &.go-animate
         &:nth-child(1)
-          animation: position-toLeft 25s linear infinite
+          animation: position-toLeft 225s linear infinite
         &:nth-child(2)
-          animation: position-toRight 25s linear infinite
+          animation: position-toRight 225s linear infinite
 .second-callback
   padding: 250px 0
 .pre-contact
@@ -814,6 +866,8 @@ ul, li, ol
     margin-bottom: 69px
 .contact
   background: url('../img/contacts.svg') no-repeat top
+  position: relative
+  bottom: -1px
   overflow: hidden
   -webkit-background-size: 100% auto
   background-size: 100% auto
@@ -857,6 +911,8 @@ ul, li, ol
     display: inline-block
     text-decoration: #FFF solid underline
     @include transition(.3s)
+    img
+      width: 80%
   a:hover
     @include transform(scale(.9))
     opacity: .9
