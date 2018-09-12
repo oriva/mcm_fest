@@ -138,7 +138,9 @@ function showLines() {
 function showMobileLines(){
     if($(window).width()<576) {
         if((wintop+winheight/1.5)>$('.dynamics__graph-mobile').offset().top && lineAnimate==true && wintop<$('.dynamics__graph-mobile').offset().top) {
-            $('.dynamics__graph-mobile not-ready').removeClass('not-ready');
+            $('.dynamics__graph-mobile line').removeClass('not-ready');
+            $('.dynamics__graph-mobile .mob-party').removeClass('line-not-ready');
+            $('.dynamics__graph-mobile .go-text').addClass('text-ready');
         }
     }
 }
@@ -165,7 +167,7 @@ $('.scroll-weed-everyday').click(function (event) {
 });
 $(document).scroll(function(){
     showLines();
-
+    showMobileLines()
 });
 
 

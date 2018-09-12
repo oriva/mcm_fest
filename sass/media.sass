@@ -74,72 +74,6 @@
       padding-bottom: 110px
   .dynamics
     padding: 100px 0
-    &__graph
-      display: none
-      &-mobile
-        display: grid
-        grid-template-columns: 1fr 20px 40px
-        grid-template-rows: auto
-        grid-template-areas: ". line ." ". line ." ". line ." ". line ." ". line ." ". line ." ". line ." ". line ." ". line ."
-        margin-top: 90px
-        text-align: left
-        min-height: 250px
-        align-items: center
-        div
-        .mob-party
-          background: #F00 no-repeat center 20px
-          -webkit-background-size: 20% auto
-          background-size: 20% auto
-          margin: 0 0 0 auto
-          width: 30%
-          height: 0
-          padding: 20px
-          justify-self: end
-          @include transition(1.7s)
-          span
-            color: #FFF
-            font-weight: 600
-          &.mob-2011
-            transition-delay: .15s
-            height: 100%
-            margin: 25px 0 25px auto
-          &.mob-2012
-            transition-delay: .3s
-            height: 100%
-            margin: 25px 0 25px auto
-          &.mob-2013
-            transition-delay: .45s
-            height: 100%
-            margin: 25px 0 25px auto
-          &.mob-2014
-            transition-delay: .6s
-            height: 100%
-            margin: 25px 0 25px auto
-          &.mob-2015
-            transition-delay: .75s
-            height: 100%
-            margin: 25px 0 25px auto
-          &.mob-2016
-            transition-delay: .9s
-            height: 100%
-            margin: 25px 0 25px auto
-          &.mob-2017
-            transition-delay: 1.05s
-            height: 100%
-            margin: 25px 0 25px auto
-          &.mob-2018
-            transition-delay: 1.2s
-            height: 100%
-            margin: 25px 0 25px auto
-        line
-          grid-area: line
-          align-self: start
-          height: 100%
-          width: 100%
-          background-color: #F00
-          @include transition(.3s)
-          &.not-ready
-            height: 0
     &__org
       &-head
         margin: 100px 0 15px
@@ -259,9 +193,12 @@
     &__closed
       height: 20px
       width: 20px
-  .menu-fixed__main
-    margin: 0
-    padding: 1vh 0 6vh
+  .menu-fixed
+    &.container
+      width: 95%
+    &__main
+      margin: 0
+      padding: 1vh 0 6vh
   .hamburglar
     margin: 2.4vh 0px 10px auto
   .political_par label
@@ -340,6 +277,100 @@
       .political_par
         display: inline-block
   .dynamics
+    &__graph
+      display: none
+      &-mobile
+        display: grid
+        grid-template-columns: 1fr 20px 40px
+        grid-template-rows: auto
+        grid-template-areas: ". line ." ". line ." ". line ." ". line ." ". line ." ". line ." ". line ." ". line ." ". line ."
+        margin-top: 90px
+        text-align: left
+        min-height: 50px
+        align-items: center
+        .mob-party
+          background: #F00
+          height: auto
+          max-height: 100px
+          margin: 25px 0 25px auto
+          padding: 20px
+          overflow: hidden
+          justify-self: end
+          @include transition(1.7s)
+          span
+            color: #FFF
+            font-weight: 600
+          &.mob-2011
+            transition-delay: .15s
+            width: 50%
+          &.mob-2012
+            transition-delay: .3s
+            width: 53%
+          &.mob-2013
+            transition-delay: .45s
+            width: 57%
+          &.mob-2014
+            transition-delay: .6s
+            width: 63%
+          &.mob-2015
+            transition-delay: .75s
+            width: 70%
+          &.mob-2016
+            transition-delay: .9s
+            width: 78%
+          &.mob-2017
+            transition-delay: 1.05s
+            width: 85%
+          &.mob-2018
+            transition-delay: 1.2s
+            width: 97%
+          &.line-not-ready
+            max-height: 0px
+            margin: 0 0 0 auto
+            padding: 0
+            width: 40%
+        .go-text
+          width: 45%
+          margin: auto
+          display: block
+          @include transition(1s)
+          @include transform(scale(0))
+          &.text-1
+            animation-delay: .15s!important
+            transition-delay: .15s!important
+          &.text-2
+            animation-delay: .3s!important
+            transition-delay: .3s!important
+          &.text-3
+            animation-delay: .45s!important
+            transition-delay: .45s!important
+          &.text-4
+            animation-delay: .6s!important
+            transition-delay: .6s!important
+          &.text-5
+            animation-delay: .75s!important
+            transition-delay: .75s!important
+          &.text-6
+            animation-delay: .9s!important
+            transition-delay: .9s!important
+          &.text-7
+            animation-delay: 1.05s!important
+            transition-delay: 1.05s!important
+          &.text-8
+            animation-delay: 1.2s!important
+            transition-delay: 1.2s!important
+          &.text-ready
+            animation: text-attack .9s ease-out
+            @include transform(scale(1))
+        line
+          grid-area: line
+          align-self: start
+          height: 100%
+          width: 100%
+          background-color: #F00
+          @include transition(1.4s)
+          &.not-ready
+            height: 0
     &__p-about
       padding: 10px
     &__about
@@ -377,6 +408,7 @@
     &__form
       font-size: 1em
   .partners
+    overflow: hidden
     &__absolute
       height: auto
       width: 100%
@@ -440,4 +472,11 @@
     a
       font-size: 22px
       margin-bottom: 22px
+@keyframes text-attack
+  from
+    @include transform(scale(0))
+  50%
+    @include transform(scale(1.4))
+  to
+    @include transform(scale(1))
 
