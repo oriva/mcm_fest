@@ -1,5 +1,7 @@
 @import "mixin"
 @media screen and (min-width:1200px)
+  .header__duo img
+    padding-left: 0
   .working__collage_item.go-animate
     &:nth-child(1)
       animation: position-toLeft 125s linear infinite
@@ -472,6 +474,17 @@
     a
       font-size: 22px
       margin-bottom: 22px
+  .error-404
+    .header
+      margin-bottom: 50px
+    &__h2
+      margin-bottom: 90px
+      &:before
+        bottom: -70px
+      h2
+        font-size: 125px
+    .pre-contact
+      background-color: initial
 @keyframes text-attack
   from
     @include transform(scale(0))

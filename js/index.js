@@ -145,6 +145,16 @@ function showMobileLines(){
     }
 }
 
+function successGo(){
+    if($('.success').hasClass('show')){
+        $('.success').addClass('hide');
+        $('.success').removeClass('show');
+    } else {
+        $('.success').addClass('show');
+        $('.success').removeClass('hide');
+    }
+}
+
 $('.scroll-weed-everyday').click(function (event) {
     if($('.menu-fixed__other').hasClass('disabled')){
         return false;
@@ -201,5 +211,55 @@ $(document).mousedown(function (e){
         var video = $(".video-modal iframe").attr("src");
         $(".video-modal iframe").attr("src","");
         $(".video-modal iframe").attr("src",video);
+    }
+});
+
+$(function () {
+    $('.input--tel').mask('+7(999)999-99-99');
+
+    $('.input--tel').on('focus', function () {
+        if ($(this).val().length === 0) {
+            $(this).val('+7(');
+        }
+    });
+    $('.input--tel').on('focusout', function () {
+        if ($(this).val().length <= 4) {
+            $(this).val('');
+        }
+    });
+
+    $('.input--tel').keydown(function (e) {
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+            (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+            (e.keyCode == 67 && (e.ctrlKey === true || e.metaKey === true)) ||
+            (e.keyCode == 88 && (e.ctrlKey === true || e.metaKey === true)) ||
+            (e.keyCode >= 35 && e.keyCode <= 39)) {
+            return;
+        }
+
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+});
+
+$('form').submit(function(e){
+    e.preventDefault();
+    var data_info = $(this).serialize();
+    var phone = $(this).find('.input--tel');
+    if(phone.val().length!=16){
+        alert('Введите номер телефона полностью');
+    } else {
+        $.ajax({
+            type: "POST", //Метод отправки
+            url: "/forms/sendmail.php", //путь до php фаила отправителя
+            data: data_info,
+            success: function() {
+                successGo();
+            },
+            error: function() {
+                successGo();
+            },
+        });
     }
 });

@@ -24,6 +24,15 @@
     <title>Фестиваль MCM</title>
 </head>
 <body>
+<div class="success">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <span>Ваша заявка принята!</span>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="video-modal">
     <div class="container h-100">
         <div class="row align-items-center justify-content-center h-100">
@@ -107,7 +116,7 @@
 <header class="header" id="header">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
-            <a class="col-lg-3 col-sm-2 col-6 header__logo" href="http://mcm.fm/" target="_blank">
+            <a class="col-lg-3 col-sm-2 col-6 header__logo" href="/">
                 <img src="/img/header-logo.png" alt="Логотип">
             </a>
             <div class="col-lg-8 col-12 header__h1">
@@ -120,7 +129,7 @@
                 <label>Станьте спонсором фестиваля<br>и о вас узнают тысячи людей</label>
                 <i class="font-red">Информационный охват<br>более 300 000 человек</i>
             </div>
-            <div class="col-lg-3 offset-sm-1 col-sm-10 col-3 text-center">
+            <div class="col-md-3 offset-sm-1 col-sm-10 col-3 text-center">
                 <div class="header__size-play">
                     <div class="header__play">
                         <img src="/img/button-play__without-bg.svg" alt="">
@@ -144,7 +153,7 @@
                                  class="header__music_pause header__music_sound">
                         </div>
                         <div class="col-auto">
-                            <label>Гимн фестиваля - NT LEX</label>
+                            <label>Гимн фестиваля</label>
                         </div>
                         <p>1:25</p>
                         <div class="col-auto">
@@ -341,9 +350,10 @@
             <div class="col-lg-10 col-12">
                 <form class="sponsorship__form">
                     <div class="row align-items-center justify-content-center">
+                        <input type="text" hidden="hidden" name="type" value="1">
                         <div class="col-sm-3 col-8">
                             <div class="group">
-                                <input type="text" class="name_hid" name="name" autocomplete="off" placeholder="Имя">
+                                <input type="text" class="name" name="name" autocomplete="off" placeholder="Имя">
                                 <span class="bar"></span>
                                 <label>Имя</label>
                             </div>
@@ -452,7 +462,7 @@
                 <h2 class="dynamics__org-head">организатор фестиваля - «Радио мСм»</h2>
                 <p class="dynamics__org-para text-center">Самая популярная радиостанция Иркутской области.</p>
             </div>
-            <div class="col-lg-6 col-sm-8 col-10 offset-sm-2 offset-1 mob-order-2">
+            <div class="col-lg-6 col-sm-8 col-10 offset-lg-0 offset-sm-2 offset-1 mob-order-2">
                 <div class="dynamics__about">
                     <div><img src="img/dynamics/about-1.svg" alt="">
                         <p>Более <span class="font-red">80 000</span> слушателей ежедневно</p></div>
@@ -563,6 +573,7 @@
                 <h2>оставьте заявку сейчас и Станьте партнером фестиваля в 2019 году</h2>
                 <form class="first-callback__form">
                     <div class="row align-items-center justify-content-center">
+                        <input type="text" hidden="hidden" name="type" value="2">
                         <div class="col-sm-3 col-8">
                             <div class="group">
                                 <input type="text" class="name_hid" name="name" autocomplete="off" placeholder="Имя">
@@ -684,6 +695,7 @@
             <div class="col-lg-10 col-12">
                 <form class="sponsorship__form">
                     <div class="row align-items-center justify-content-center">
+                        <input type="text" hidden="hidden" name="type" value="3">
                         <div class="col-sm-3 col-8">
                             <div class="group">
                                 <input type="text" class="name_hid" name="name" autocomplete="off" placeholder="Имя">
@@ -760,12 +772,13 @@
                     src="img/icons/logo_litvinenko.svg" alt="logo"></a></div>
             <div class="col-sm-4 col-12 text-center mob-order-1"><a href="/legal" class="footer_legal">Политика
                 конфиденциальности</a></div>
-            <div class="col-sm-4 col-12 text-right mob-order-2"><a href="http://mcmfest.ru/">mcmfest.ru</a></div>
+            <div class="col-sm-4 col-12 text-right mob-order-2"><a href="http://fest.mcm.fm/">fest.mcm.fm</a></div>
         </div>
     </div>
 </div>
 <script src="/js/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 <script src="/js/owl.carousel.min.js"></script>
 <script src="/js/index.js"></script>
 </body>
