@@ -1,6 +1,35 @@
 var red = document.querySelectorAll('.poloska');
 var doit, intervalloh, linePos = $('.mega-line').offset().top, lineAnimate = true, phototop, photoheight, wintop, winheight, worktop, workheight, isClosed = false, music=new Audio("../img/hymn.mp3");
 
+//functions
+
+
+function formGo(){
+    if($('.call-back').hasClass('show')){
+        $('.call-back').addClass('hide');
+        $('.call-back').removeClass('show');
+        setTimeout(function () {
+            $('.call-back').removeClass('hide');
+        }, 1000);
+    } else {
+        $('.call-back').addClass('show');
+        $('.call-back').removeClass('hide');
+    }
+}
+function successGo(){
+    if($('.success').hasClass('show')){
+        $('.success').addClass('hide');
+        $('.success').removeClass('show');
+    } else {
+        if($('.call-back').hasClass('show')){
+            formGo();
+        }
+        $('.success').addClass('show');
+        $('.success').removeClass('hide');
+    }
+}
+
+
 $('.header__music .header__music_sound').click(function () {
 
     $('.header__music').toggleClass('playing'); //
@@ -11,6 +40,7 @@ $('.header__music .header__music_sound').click(function () {
     var animationDuration = 0.6;
 
     if(doit) {
+        music.volume=0.5;
         music.play();
         red.forEach(function (element) {
             function setProperty(duration, size) {
@@ -19,6 +49,7 @@ $('.header__music .header__music_sound').click(function () {
             }
             intervalloh = setInterval(function () {
                 if (doit){
+                $('.header__music').    Math.floor(music.currentTime)
                 animationDuration = Math.random() * (max - min) + min;
                 animationSize = Math.random() * (max - min) + min;
                 setProperty(animationDuration, animationSize);}}, animationDuration * 1000);
@@ -37,7 +68,24 @@ $('.header__music .header__music_sound').click(function () {
 //burger
 
 $('document').ready(function () {
-
+    if($(window).width()>576)
+    {
+        $('.header__music').toggleClass('playing');
+        const min = 0.3, max = 0.8;
+        var animationDuration = 0.6;
+        music.play();
+        red.forEach(function (element) {
+            function setProperty(duration, size) {
+                element.style.setProperty('--animation-time', duration + 's');
+                element.style.setProperty('--animation-size', size);
+            }
+            intervalloh = setInterval(function () {
+                animationDuration = Math.random() * (max - min) + min;
+                animationSize = Math.random() * (max - min) + min;
+                setProperty(animationDuration, animationSize);}, animationDuration * 1000);
+            intervalloh;
+        });
+    }
     // carousel
     if($(window).width()<576)
     {
@@ -145,15 +193,16 @@ function showMobileLines(){
     }
 }
 
-function successGo(){
-    if($('.success').hasClass('show')){
-        $('.success').addClass('hide');
-        $('.success').removeClass('show');
-    } else {
-        $('.success').addClass('show');
-        $('.success').removeClass('hide');
-    }
-}
+$('.about-marketing__button').click(function () {
+    formGo()
+});
+$('.call-back .closed').click(function () {
+    $('.call-back').addClass('hide');
+    $('.call-back').removeClass('show');
+    setTimeout(function () {
+        $('.call-back').removeClass('hide');
+    }, 1000);
+});
 
 $('.scroll-weed-everyday').click(function (event) {
     if($('.menu-fixed__other').hasClass('disabled')){
@@ -175,9 +224,15 @@ $('.scroll-weed-everyday').click(function (event) {
         }, 1100);
     }
 });
-$(document).scroll(function(){
+    $(document).scroll(function(){
     showLines();
-    showMobileLines()
+    showMobileLines();
+    wintop = $(window).scrollTop();
+    if($('.header').height()>wintop) {
+        $('.header__music').removeClass('fixed');
+    } else {
+        $('.header__music').addClass('fixed');
+    }
 });
 
 
@@ -256,9 +311,15 @@ $('form').submit(function(e){
             data: data_info,
             success: function() {
                 successGo();
+                setTimeout(function () {
+                    successGo();
+                }, 1500);
             },
             error: function() {
                 successGo();
+                setTimeout(function () {
+                    successGo();
+                }, 1500);
             },
         });
     }

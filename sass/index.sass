@@ -82,8 +82,45 @@ ul, li, ol
   color: #F00
 .font-black
   color: #000
+.call-back
+  z-index: 10
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background-color: #eaeaea
+  text-align: center
+  width: 100%
+  @include transition(.3s)
+  display: none
+  .closed, h2, .sponsorship__form
+    @include transform(translateY(-100vh))
+    @include transition(.3s)
+  .closed
+    display: block
+    margin-left: auto
+    cursor: pointer
+    transition-delay: 1.2s
+    &:hover
+      @include transform(rotate(-30deg))
+      animation: closedForm 2s infinite
+  h2
+    transition-delay: 1s
+  .sponsorship__form
+    transition-delay: .8s
+  &.hide
+    animation: reverSuccess .9s both
+    display: block
+    .closed, h2, .sponsorship__form
+      @include transform(translateY(0))
+  &.show
+    animation: success .9s both
+    display: block
+    .closed, h2, .sponsorship__form
+      @include transform(translateY(0))
 .success
-  z-index: 6
+  z-index: 12
   position: fixed
   top: 0
   left: 0
@@ -101,9 +138,11 @@ ul, li, ol
     text-transform: uppercase
   &.hide
     animation: reverSuccess .9s both
+    animation-delay: 1s
     display: block
   &.show
     animation: success .9s both
+    animation-delay: .9s
     display: block
 .political_par
   text-align: left
@@ -187,6 +226,10 @@ ul, li, ol
       color: transparent
     &:focus, &:not(:placeholder-shown)
       color: #000
+    &:invalid, &:-moz-ui-invalid
+      border: none
+      border-bottom: 1px solid rgba(255, 0, 0, 0.6)
+      box-shadow: none
   label
     font-weight: 600
     color: #000
@@ -387,6 +430,14 @@ ul, li, ol
     -webkit-box-shadow: 2px 3px 2px rgba(0,0,0,0.25)
     -moz-box-shadow: 2px 3px 2px rgba(0,0,0,0.25)
     box-shadow: 2px 3px 2px rgba(0,0,0,0.25)
+    &.fixed
+      position: fixed
+      top: 0
+      z-index: 7
+      left: 0
+      right: 0
+      width: 500px
+      margin: 60px auto
     &_sound
       display: block
       margin-left: 10px
@@ -459,14 +510,14 @@ ul, li, ol
       height: 100%
       width: auto
       display: block
-      margin: auto
-      padding-left: 10%
+      margin: auto auto auto 180px
+
 .video-modal
   z-index: 100
   position: fixed
   height: 100vh
   width: 100vw
-  background-color: rgba(0, 0, 0, 1)
+  background-color: #FFF
   @include transition(.3s)
   @include transform(translateY(-110vh))
   iframe
@@ -826,7 +877,7 @@ ul, li, ol
   h2
     padding-bottom: 40px
   .gallery__photo
-    margin-top: 160px
+    margin-top: 70px
     position: relative
     .col-12
       padding: 0
@@ -1054,3 +1105,12 @@ ul, li, ol
     @include transform(translateY(20%))
   to
     @include transform(translateY(-110%))
+@keyframes closedForm
+  from
+    @include transform(scale(1) rotate(0))
+  25%
+    @include transform(scale(.97) rotate(-30deg))
+  85%
+    @include transform(scale(1.05) rotate(930deg))
+  to
+    @include transform(scale(1) rotate(900deg))
