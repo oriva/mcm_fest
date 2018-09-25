@@ -248,36 +248,36 @@
                     </button>
                 </div>
                 <div class="col-1"></div>
-                <div class="col-sm-4 col-12">
-                    <div class="about-marketing__item cup">
-                        <img src="img/about-marketing/heart.svg" alt="">
-                        <p>Один из самых <span class="font-red">масштабный</span> и <span
-                                class="font-red">посещаемый</span> фестиваль в Иркутске!</p>
+                <div class="col-sm-4 col-12 paraclass">
+                    <div class="about-marketing__item cup paraclass" data-depth="0.2">
+                        <img src="img/about-marketing/heart.svg" alt="Сердечко" data-depth="0.1">
+                        <p>Один из самых <span class="font-red">масштабных</span> и <span
+                                class="font-red">посещаемых</span> фестивалей в Иркутске!</p>
                     </div>
                 </div>
-                <div class="col-sm-4 col-12">
-                    <div class="about-marketing__item guitar">
-                        <img src="img/about-marketing/flash.svg" alt="">
+                <div class="col-sm-4 col-12 paraclass">
+                    <div class="about-marketing__item guitar paraclass" data-depth="0.1">
+                        <img src="img/about-marketing/flash.svg" data-depth="0.3">
                         <p><span class="font-red">Яркие выступления</span> лучших музыкальных коллективов!</p>
                     </div>
                 </div>
-                <div class="col-sm-4 col-12">
-                    <div class="about-marketing__item dj">
-                        <img src="img/about-marketing/note.svg" alt="">
+                <div class="col-sm-4 col-12 paraclass">
+                    <div class="about-marketing__item dj paraclass" data-depth="0.2">
+                        <img src="img/about-marketing/note.svg" alt="" data-depth="0.1">
                         <p>Многочасовой концерт на одной из <span class="font-red">центральных</span> площадок нашего
                             города!</p>
                     </div>
                 </div>
                 <div class="col-2 d-none d-sm-block"></div>
-                <div class="col-sm-4 col-12">
-                    <div class="about-marketing__item star">
-                        <img src="img/about-marketing/star-icon.svg" alt="">
+                <div class="col-sm-4 col-12 paraclass">
+                    <div class="about-marketing__item star paraclass" data-depth="0.3">
+                        <img src="img/about-marketing/star-icon.svg" alt="" data-depth="0.2">
                         <p>Хедлайнеры - <span class="font-red">звезды всероссийского</span> масштаба!</p>
                     </div>
                 </div>
-                <div class="col-sm-4 col-12">
-                    <div class="about-marketing__item eight">
-                        <img src="img/about-marketing/time.svg" alt="">
+                <div class="col-sm-4 col-12 paraclass">
+                    <div class="about-marketing__item eight paraclass" data-depth="0.3">
+                        <img src="img/about-marketing/time.svg" alt="" data-depth="0.2">
                         <p>Ежегодное шоу <span class="font-red d-block">с 8-ми летней историей!</span></p>
                     </div>
                 </div>
@@ -679,7 +679,7 @@
             </div>
             <div class="col-sm-5 col-6">
                 <p>• Информационный охват
-                    <br>более 300 000 
+                    <br>более 300 000
                     <br>человек</p>
             </div>
         </div>
@@ -731,7 +731,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10 col-12">
-                <h2>Отправьте заявку сейчас и Станьте партнером фестиваля в 2019 году </h2>
+                <h2>Отправьте заявку сейчас и Станьте партнером фестиваля в 2019 году</h2>
             </div>
             <div class="col-lg-10 col-12">
                 <form class="sponsorship__form">
@@ -818,6 +818,15 @@
     </div>
 </div>
 <script src="/js/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+<script>
+    for(i=0;i<$('.paraclass').length;i++) {
+        var scene = new Parallax($('.paraclass').get(i), {
+          hoverOnly:  true 
+        });
+    }
+    
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 <script src="/js/owl.carousel.min.js"></script>

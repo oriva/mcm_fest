@@ -1,5 +1,6 @@
 var red = document.querySelectorAll('.poloska');
-var doit, intervalloh, linePos = $('.mega-line').offset().top, lineAnimate = true, phototop, photoheight, wintop,
+var doit, intervalloh, linePos = $('.mega-line').offset().top, lineAnimate = true, phototop, minutes,
+    seconds, photoheight, wintop,
     winheight, worktop, workheight, isClosed = false, music = new Audio("../img/hymn.mp3");
 
 //functions
@@ -31,24 +32,21 @@ function successGo() {
     }
 }
 
-var timeFormat = (function (){
-    function num(val){
+timeFormat = (function () {
+    function num(val) {
         val = Math.floor(val);
         return val < 10 ? '0' + val : val;
     }
 
-    return function (ms){
-        var sec = ms / 1000
-            , minutes = sec / 60 % 60
-            , seconds = sec % 60
-        ;
-
+    return function (ms) {
+        minutes = ms / 60 % 60;
+        seconds = ms % 60;
         return num(minutes) + ":" + num(seconds);
     };
 })();
 
 
-$('.header__music .header__music_sound').click(function () {
+$('.header__music .header__music_sound').click(function changePlay() {
 
     $('.header__music').toggleClass('playing'); //
 
@@ -60,27 +58,29 @@ $('.header__music .header__music_sound').click(function () {
     if (doit) {
         music.volume = 0.5;
         music.play();
-        red.forEach(function (element) {
-            function setProperty(duration, size) {
-                element.style.setProperty('--animation-time', duration + 's');
-                element.style.setProperty('--animation-size', size);
-            }
+        intervalloh = setInterval(function () {
+            red.forEach(function (element) {
+                function setProperty(duration, size) {
+                    element.style.setProperty('--animation-time', duration + 's');
+                    element.style.setProperty('--animation-size', size);
+                }
 
-            intervalloh = setInterval(function () {
                 if (doit) {
-                    // $('.header__music p').html(timeFormat(Math.floor(music.currentTime)));
                     animationDuration = Math.random() * (max - min) + min;
                     animationSize = Math.random() * (max - min) + min;
                     setProperty(animationDuration, animationSize);
                 }
-            }, animationDuration * 1000);
-            intervalloh;
-        });
+            });
+            $('.header__music p').html(timeFormat(Math.floor(music.currentTime)));
+            if(music.currentTime>=224){
+                changePlay();
+            }
+        }, animationDuration * 1000);
+
     } else {
         music.pause();
         clearInterval(intervalloh);
     }
-
 
 });
 
@@ -89,7 +89,7 @@ $('.header__music .header__music_sound').click(function () {
 
 $('document').ready(function () {
     setTimeout(function () {
-            $('.preloader').addClass('hide');
+        $('.preloader').addClass('hide');
         // if ($(window).width() > 576) {
         //     $('.header__music').toggleClass('playing');
         //     const min = 0.3, max = 0.8;
@@ -270,12 +270,20 @@ $(document).scroll(function () {
 $('.header__play').click(function () {
     $('html').addClass('overfloff');
     $('.video-modal').addClass('show');
-    music.pause();
+    if ($('.header__music').hasClass('playing')) {
+        $('.header__music').toggleClass('playing');
+        music.pause();
+        clearInterval(intervalloh);
+    }
 });
 $('.header__watch').click(function () {
     $('html').addClass('overfloff');
     $('.video-modal').addClass('show');
-    music.pause();
+    if ($('.header__music').hasClass('playing')) {
+        $('.header__music').toggleClass('playing');
+        music.pause();
+        clearInterval(intervalloh);
+    }
 });
 
 $('.video-modal__closed').click(function () {

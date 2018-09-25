@@ -540,18 +540,19 @@ ul, li, ol
     margin-left: auto
     height: 40px
     width: 40px
-    margin-bottom: 10px
+    margin-bottom: -40px
+    margin-right: -60px
     cursor: pointer
     @include transition(.4s)
     @include transform(translateY(-110vh))
-    transition-delay: .4s
+    transition-delay: 1.2s
     img
       width: 100%
       height: 100%
       @include transition(.3s)
     &:hover
-      img
-        @include transform(scale(.8))
+      @include transform(rotate(-30deg))
+      animation: closedForm 2s infinite
   &__container
     position: relative
     width: 800px
@@ -590,6 +591,7 @@ ul, li, ol
       height: 75px
       margin-left: auto
     p
+      position: relative!important
       width: 100%
       text-align: left
       font-size: 1.1em
@@ -667,6 +669,7 @@ ul, li, ol
       display: block
       margin: auto
       height: 27px
+      pointer-events: none
   &__red
     background-color: #F00
   &__icon-write
@@ -849,6 +852,13 @@ ul, li, ol
     padding-bottom: 75px
   img
     width: 100%
+  a
+    @include transition(.3s)
+  a:hover 
+    @include transform(translateY(-5%))
+    -ms-flex: 0 0 19%
+    flex: 0 0 19%
+    max-width: 19%
 .rider-stars
   z-index: -1
   position: relative
@@ -884,7 +894,7 @@ ul, li, ol
   &__form
     padding-top: 60px
 .gallery
-  padding: 150px 0
+  padding: 150px 0 60px
   &__collage
     position: relative
     &_item
